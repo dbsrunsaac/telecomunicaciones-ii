@@ -2,9 +2,9 @@ clc
 clear all
 %signal conditioning and muxing for 3 input
 
-[u1 fs1 b1]=audioread('midnight-pretenders-tomoko-aran.au');
-[u2 fs2 b2]=audioread('gypsy-woman.au');
-[u3 fs3 b3]=audioread('vitas-7th-element.au');
+[u1 fs1]=audioread('voz_1.au');
+[u2 fs2]=audioread('voz_2.au');
+[u3 fs3]=audioread('voz_3.au');
 
 N=3;
 ts=1/fs1;
