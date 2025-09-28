@@ -11,8 +11,8 @@ t_cont = 0:1/Fs_cont:T_cont-1/Fs_cont;   % vector tiempo continuo
 % Parámetros de cada señal (elige frecuencias que representen una banda base)
 f_seno = 120;             % frecuencia seno (Hz)
 f_tri  = 60;              % frecuencia triangular (Hz)
-A_seno = 1.0;             % amplitud seno
-A_tri  = 0.8;             % amplitud triangular
+A_seno = 2;             % amplitud seno
+A_tri  = 2;             % amplitud triangular
 
 %% 1) Generación de la señal senoidal y triangular
 x_seno = A_seno * sin(2*pi*f_seno*t_cont);
