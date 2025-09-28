@@ -75,7 +75,7 @@ stem(t_sampled, triangular_pcm_sampled); title('Triangular PCM Muestreada');
 xlabel('Tiempo (s)'); ylabel('Nivel PCM');
 
 subplot(3,2,5);
-stem(1:length(tdm_signal), tdm_signal); title('Señal TDM');
+stairs(1:length(tdm_signal), tdm_signal); title('Señal TDM');
 xlabel('Índice'); ylabel('Nivel PCM');
 
 subplot(3,2,6);

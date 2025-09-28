@@ -170,7 +170,7 @@ grid on; hold off;
 
 % 3: TDM (muestras intercaladas) — mostramos fragmento para claridad
 subplot(3,2,5);
-plot(t_tdm, tdm_muestras, 'LineWidth', 1);
+stairs(t_tdm, tdm_muestras, 'LineWidth', 1);
 xlim([0, 5*Ts_tdm]); % mostrar unas pocas tramas
 title('TDM (muestras intercaladas) - fragmento');
 xlabel('Tiempo (s)'); ylabel('Amplitud'); grid on;
