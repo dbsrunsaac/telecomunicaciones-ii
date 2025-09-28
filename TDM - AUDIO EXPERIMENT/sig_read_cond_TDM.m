@@ -2,9 +2,10 @@ clc
 clear all
 %signal conditioning and muxing for 3 input
 
-[u1 fs1 b1]=auread('guitar1.au');
-[u2 fs2 b2]=auread('speech2.au');
-[u3 fs3 b3]=auread('guitar2.au');
+[u1 fs1 b1]=audioread('midnight-pretenders-tomoko-aran.au');
+[u2 fs2 b2]=audioread('gypsy-woman.au');
+[u3 fs3 b3]=audioread('vitas-7th-element.au');
+
 N=3;
 ts=1/fs1;
 Ts = ts; % Slot time interval
