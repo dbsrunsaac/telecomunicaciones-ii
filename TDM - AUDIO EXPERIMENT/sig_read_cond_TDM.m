@@ -11,30 +11,6 @@ ts=1/fs1;
 Ts = ts; % Slot time interval
 ns = Ts/ts;
 
-disp('Press ENTER to hear the audio signals before conditioning');
-pause
-sound(u1)
-disp('Press ENTER to hear the audio signals before conditioning');
-pause
-sound(u2)
-disp('Press ENTER to hear the audio signals before conditioning');
-pause
-sound(u3)
-
-% disp('Press ENTER to hear the audio signals before conditioning');
-%pause 
-%sound(u4)
-% disp('Press ENTER to hear the audio signals before conditioning');
-% sound(u5)
-% disp('Press ENTER to hear the audio signals before conditioning');
-% sound(u6)
-% disp('Press ENTER to hear the audio signals before conditioning');
-% sound(u7)
-% disp('Press ENTER to hear the audio signals before conditioning');
-% sound(u8)
-% disp('Press ENTER to hear the audio signals before conditioning');
-% sound(u9)
-
 for s=1:N    %TO find LENGTH
     eval(['zz'  '=u' num2str(s)])
     eval(['l' num2str(s)  '=length(zz)'])
@@ -78,18 +54,7 @@ sound(uu2)
 disp('Press ENTER to hear the audio signals before conditioning');
 pause
 sound(uu3)
-% disp('Press ENTER to hear the audio signals before conditioning');
-% sound(uu4)
-% disp('Press ENTER to hear the audio signals before conditioning');
-% sound(uu5)
-% disp('Press ENTER to hear the audio signals before conditioning');
-% sound(uu6)
-% disp('Press ENTER to hear the audio signals before conditioning');
-% sound(uu7)
-% disp('Press ENTER to hear the audio signals before conditioning');
-% sound(uu8)
-% disp('Press ENTER to hear the audio signals before conditioning');
-% sound(uu9)
+
 
 for b=1:N
     eval(['u(b,:)=uu' num2str(b) ';' ])

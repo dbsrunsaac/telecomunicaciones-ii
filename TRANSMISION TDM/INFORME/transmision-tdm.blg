@@ -4,62 +4,55 @@ The top-level auxiliary file: transmision-tdm.aux
 Reallocating 'name_of_file' (item size: 1) to 9 items.
 The style file: IEEEtran.bst
 Reallocating 'name_of_file' (item size: 1) to 7 items.
-I couldn't open database file biblio.bib
----line 6 of file transmision-tdm.aux
- : \bibdata{biblio
- :                }
-I'm skipping whatever remains of this command
-I found no \citation commands---while reading file transmision-tdm.aux
-I found no database files---while reading file transmision-tdm.aux
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'wiz_functions' (item size: 4) to 6000 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
+Database file #1: biblio.bib
 -- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 
 Done.
-You've used 0 entries,
+You've used 1 entry,
             4087 wiz_defined-function locations,
-            821 strings with 7305 characters,
-and the built_in function-call counts, 104 in all, are:
-= -- 0
-> -- 0
-< -- 0
-+ -- 0
-- -- 0
-* -- 19
-:= -- 27
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
-chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 1
-format.name$ -- 0
-if$ -- 3
+            827 strings with 7414 characters,
+and the built_in function-call counts, 509 in all, are:
+= -- 25
+> -- 6
+< -- 2
++ -- 2
+- -- 1
+* -- 35
+:= -- 91
+add.period$ -- 2
+call.type$ -- 1
+change.case$ -- 1
+chr.to.int$ -- 6
+cite$ -- 1
+duplicate$ -- 38
+empty$ -- 52
+format.name$ -- 1
+if$ -- 100
 int.to.chr$ -- 0
-int.to.str$ -- 0
-missing$ -- 0
-newline$ -- 23
-num.names$ -- 0
-pop$ -- 0
+int.to.str$ -- 1
+missing$ -- 5
+newline$ -- 26
+num.names$ -- 1
+pop$ -- 17
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 1
+skip$ -- 29
 stack$ -- 0
-substring$ -- 0
-swap$ -- 0
+substring$ -- 7
+swap$ -- 17
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 0
+type$ -- 1
 warning$ -- 0
-while$ -- 0
-width$ -- 0
-write$ -- 22
-(There were 3 error messages)
+while$ -- 2
+width$ -- 2
+write$ -- 29

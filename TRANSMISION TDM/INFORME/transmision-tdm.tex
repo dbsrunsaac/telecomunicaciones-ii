@@ -85,9 +85,29 @@
 	\end{IEEEkeywords}
 	
 	\section{Introducción}
+	
+	La Multiplexación por División de Tiempo (TDM, por sus siglas en inglés) es una técnica fundamental en los sistemas de telecomunicaciones modernos, ya que permite la transmisión eficiente de múltiples señales digitales o analógicas a través de un mismo canal físico. Su importancia radica en la optimización del uso del ancho de banda disponible, reduciendo costos de infraestructura y aumentando la capacidad de los sistemas de comunicación.
+	
+	El principio de la TDM se basa en asignar intervalos de tiempo específicos a cada señal dentro de un marco de transmisión, garantizando que todas compartan el mismo medio sin interferencias. Esta característica la convierte en una herramienta esencial en redes de telefonía, sistemas satelitales, transmisión de datos en fibra óptica y en aplicaciones de comunicación digital como la televisión digital y los servicios de internet de alta velocidad.
+	
+	Gracias a la TDM, es posible integrar diferentes tipos de información —voz, video y datos— en un mismo canal de forma organizada, manteniendo la calidad del servicio y facilitando la escalabilidad de las redes. En consecuencia, la TDM no solo representa una solución técnica eficiente, sino también una base clave para el desarrollo de sistemas de comunicación modernos que requieren alta velocidad, confiabilidad y capacidad de integración.
 	\section{Esquema general}
-	\section{Señales PAM y PCM}
+	
+	La Multiplexación por División de Tiempo permite la optimización en la cantidad de canales a usar para la trasmisión de datos digitales optimizando así el ancho de banda necesario para transmitir información de diferentes fuentes, en la figura \ref{fig:pcm-blocks} se muestra un esquema general para la transmisión de datos mediante este esquema.
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.5\textwidth]{media/pcm-blocks}
+		\caption{Diagrama de bloques - TDM}
+		\label{fig:pcm-blocks}
+	\end{figure}
+	
+	Y en el cual se especifica un modelo de transmisión de datos mediante TDM y para lo cual es necesario implementar un conmutador y/o muestreador para la señal PAM un cuantizador y codificador para generar la señal PCM equivalente y elementos para el proceso inverso para lo cual es necesario una señal de de muestreo sincronizada en el emisor y receptor según se menciona en \cite{couch2012sistemas}
+	
 	\section{Sincronización}
+	
+	Una parámetro muy importante a considerar 
+	
 	\section{Simulación}
 	\section{Código generado}
 	\section{Resultados}
