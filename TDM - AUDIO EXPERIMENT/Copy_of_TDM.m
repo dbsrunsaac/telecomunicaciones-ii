@@ -18,7 +18,7 @@ Ts = ts; % Slot time interval
 
 ns = Ts/ts; %Ts/ts;
 
-disp('Presiona enter para continuar');
+disp('before conditioning');
 pause
 disp('Presiona entre para reproducir el primer archivo de audio');
 sound(u1)
@@ -78,7 +78,7 @@ figure(1)
 
 for i=1:N
     subplot(N,1,i)
-    stairs(tx,u(i,:));
+    plot(tx,u(i,:));
     xlabel('Time(s)');
     ylabel('Amplitude');  
     if i==1
@@ -98,13 +98,13 @@ umn=awgn(um,25);
 figure(2)
 subplot(2,1,1)
 
-stairs(tx,um);
+plot(tx,um);
 xlabel('Time(s)');
 ylabel('Amplitude');
 title('TDM signal')
-
 subplot(2,1,2)
-stairs(tx,umn);
+
+plot(tx,umn);
 xlabel('Time(s)');
 ylabel('Amplitude');
 title('Signal + Noise')
@@ -142,7 +142,7 @@ end % loop end
 figure(3)
 for a=1:N
     subplot(N,1,a)
-    stairs(tx,ud(a,:));
+    plot(tx,ud(a,:));
     xlabel('Time(s)');
     ylabel('Amplitude'); 
     if a==1
