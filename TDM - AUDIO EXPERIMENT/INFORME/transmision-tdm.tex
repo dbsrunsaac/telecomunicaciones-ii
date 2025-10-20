@@ -103,26 +103,32 @@
 		\label{fig:pcm-blocks}
 	\end{figure}
 	
-	Y en la cual se pueden apreciar 6 canales siendo 3 ellos de origen analógico y los restantes digitales, destacando que la transmisión se realiza de forma digital, en esta primera etapa es necesario transformar cada señal continua en una PCM ó  codificación de los pulsos discretos haciendo uso de la frecuencia de muestreo adecuada para cada canal (para definir la frecuencia el teorema de Nyquist puede servir como punto de partida), con cada canal ya digitalizado el bloque de \textbf{SONDEO} se encarga de realizar la mezcla de todas las fuente de información para su transmisión dividiendo este resultado en intervalos de tiempo correspondiente a cada fuente mientras que en el lado del receptor para recuperar cada señal se realiza el proceso inverso.
+	Y en la cual se pueden apreciar 6 canales siendo 3 ellos de origen analógico y los restantes digitales, destacando que la transmisión se realiza de forma digital, en esta primera etapa es necesario transformar cada señal continua en una PCM ó  codificación de los pulsos discretos haciendo uso de la frecuencia de muestreo adecuada para cada canal (para definir la frecuencia el teorema de Nyquist puede servir como punto de partida), con cada canal ya digitalizado el bloque de \textbf{SONDEO} \cite{stallings2004comunicaciones} se encarga de realizar la mezcla de todas las fuente de información para su transmisión dividiendo este resultado en intervalos de tiempo correspondiente a cada fuente mientras que en el lado del receptor para recuperar cada señal se realiza el proceso inverso.
 	
 	\section{Sincronización}
 	
 	La optimización de un canal para el transmisión de información requiere ciertos parámetros de control entre los cuales se puede destacar por su importancia la señal de conmutación o de sincronización la cual es la encargada de generar los bloques de información o slots conformados a partir de las diferentes fuentes que conforman el bloque general TDM que consiste principalmente en la generación de paquetes de información espaciados temporalmente y reconstruidos en función al mismo principio de división en tiempo.
 	
-	Por lo tanto al requerirse en ambas etapa (envio y recepción) es necesario considerar que la señal de sincronización que actua al mismo tiempo de frecuencia de muestreo (en caso de contar con señales analógicas) debe ser la misma en ambos extremos de un enlace de comunicación digital por lo tanto para su despliegue se desarrollando 2 formas de poder \textbf{sincronizar} este recurso tan relevante.
+	Por lo tanto al requerirse en ambas etapa (envío y recepción) es necesario considerar que la señal de sincronización que actúa al mismo tiempo de frecuencia de muestreo (en caso de contar con señales analógicas) debe ser la misma en ambos extremos de un enlace de comunicación digital por lo tanto para su despliegue se desarrollando 2 formas de poder \textbf{sincronizar} este recurso tan relevante como se menciona en \cite{couch2012sistemas}
 	
-	\begin{itemize}
-		\item Sincronización de canal
-		\item Sincronización mediante ---
-	\end{itemize}
+	\begin{enumerate}
+		\item Sincronización mediante canal externo
+		\item Sincronización por dígito agregado
+	\end{enumerate}
 	
-	Siendo para el presente caso el empleo de una sincronización de canal en la cual se hace de un canal externo para sincronizar las señales de conmutación permitiendo recuperar de forma efectiva las señales multiplexadas en el tiempo.
-	
+	Siendo para el presente caso el empleo del primer método, en la cual se hace de un canal externo para sincronizar las señales de conmutación en ambos extremos del enlace, permitiendo recuperar de forma efectiva las señales multiplexadas en el tiempo requiriendo sin embargo una canal adicional para sincronizar correctamente la frecuencia de muestreo desde el emisor en el receptor menguando el propósito de una comunicación TDM que busca reducir el uso de canales para la transmisión de información ubicándose en las aplicaciones práctica el empleo del segundo método en la cual se hace uso de una cantidad de bits en la parte final de una trama para la sincronización de la señales.
 	
 	\section{Simulación}
-	\section{Código generado}
+	
+	% Mezclar imágenes y partes del código para explicar el procedimiento obtenido
+	
 	\section{Resultados}
 	
+	% Resumen de lo obtenido para cada etapa
+	
+	\section{Anexos}
+	
+	% Código general aplicado y capturas de los archivos empleados para la simulación
 	\bibliographystyle{IEEEtran}
 	\bibliography{biblio}
 \end{document}
