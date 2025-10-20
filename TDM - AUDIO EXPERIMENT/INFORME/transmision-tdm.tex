@@ -91,6 +91,7 @@
 	El principio de la TDM se basa en asignar intervalos de tiempo específicos a cada señal dentro de un marco de transmisión, garantizando que todas compartan el mismo medio sin interferencias. Esta característica la convierte en una herramienta esencial en redes de telefonía, sistemas satelitales, transmisión de datos en fibra óptica y en aplicaciones de comunicación digital como la televisión digital y los servicios de internet de alta velocidad.
 	
 	Gracias a la TDM, es posible integrar diferentes tipos de información —voz, video y datos— en un mismo canal de forma organizada, manteniendo la calidad del servicio y facilitando la escalabilidad de las redes. En consecuencia, la TDM no solo representa una solución técnica eficiente, sino también una base clave para el desarrollo de sistemas de comunicación modernos que requieren alta velocidad, confiabilidad y capacidad de integración.
+	
 	\section{Esquema general}
 	
 	La Multiplexación por División de Tiempo permite la optimización en la cantidad de canales a usar para la trasmisión de datos digitales optimizando así el ancho de banda necesario para transmitir información de diferentes fuentes, en la figura \ref{fig:pcm-blocks} se muestra un esquema general para la transmisión de datos mediante este esquema.
@@ -102,11 +103,21 @@
 		\label{fig:pcm-blocks}
 	\end{figure}
 	
-	Y en el cual se especifica un modelo de transmisión de datos mediante TDM y para lo cual es necesario implementar un conmutador y/o muestreador para la señal PAM un cuantizador y codificador para generar la señal PCM equivalente y elementos para el proceso inverso para lo cual es necesario una señal de de muestreo sincronizada en el emisor y receptor según se menciona en \cite{couch2012sistemas}
+	Y en la cual se pueden apreciar 6 canales siendo 3 ellos de origen analógico y los restantes digitales, destacando que la transmisión se realiza de forma digital, en esta primera etapa es necesario transformar cada señal continua en una PCM ó  codificación de los pulsos discretos haciendo uso de la frecuencia de muestreo adecuada para cada canal (para definir la frecuencia el teorema de Nyquist puede servir como punto de partida), con cada canal ya digitalizado el bloque de \textbf{SONDEO} se encarga de realizar la mezcla de todas las fuente de información para su transmisión dividiendo este resultado en intervalos de tiempo correspondiente a cada fuente mientras que en el lado del receptor para recuperar cada señal se realiza el proceso inverso.
 	
 	\section{Sincronización}
 	
-	Una parámetro muy importante a considerar 
+	La optimización de un canal para el transmisión de información requiere ciertos parámetros de control entre los cuales se puede destacar por su importancia la señal de conmutación o de sincronización la cual es la encargada de generar los bloques de información o slots conformados a partir de las diferentes fuentes que conforman el bloque general TDM que consiste principalmente en la generación de paquetes de información espaciados temporalmente y reconstruidos en función al mismo principio de división en tiempo.
+	
+	Por lo tanto al requerirse en ambas etapa (envio y recepción) es necesario considerar que la señal de sincronización que actua al mismo tiempo de frecuencia de muestreo (en caso de contar con señales analógicas) debe ser la misma en ambos extremos de un enlace de comunicación digital por lo tanto para su despliegue se desarrollando 2 formas de poder \textbf{sincronizar} este recurso tan relevante.
+	
+	\begin{itemize}
+		\item Sincronización de canal
+		\item Sincronización mediante ---
+	\end{itemize}
+	
+	Siendo para el presente caso el empleo de una sincronización de canal en la cual se hace de un canal externo para sincronizar las señales de conmutación permitiendo recuperar de forma efectiva las señales multiplexadas en el tiempo.
+	
 	
 	\section{Simulación}
 	\section{Código generado}
