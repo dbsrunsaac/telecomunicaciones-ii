@@ -15,8 +15,34 @@
 \usepackage{hyperref}
 \usepackage{academicons}
 \usepackage{xcolor}
-\usepackage{listings}
 \usepackage{tabularx} % Asegúrate de incluir este paquete
+
+% minted for use pygmetize
+\usepackage{minted2}
+\usepackage{geometry}            % Márgenes
+\usepackage{courier}			 % font type
+
+% Opciones globales (opcional) minted
+\setminted{
+	frame=lines,                 % Marco superior e inferior
+	framesep=2mm,                % Espaciado del marco
+	baselinestretch=1.1,         % Espaciado entre líneas
+	fontsize=\small,     		 % Tamaño de fuente
+	linenos,                     % Números de línea
+	breaklines,                  % Saltar líneas largas
+	bgcolor=gray!5,              % Fondo gris claro
+	tabsize=4,                   % Tamaño de tabulación
+	autogobble,                  % Ajusta indentación automáticamente
+	xleftmargin=1em,             % Margen izquierdo,
+	fontfamily=pcr
+}
+
+% config colores to minted
+\definecolor{bg}{rgb}{0.95,0.95,0.95}
+\definecolor{keyword}{rgb}{0.13,0.13,1}
+\definecolor{comment}{rgb}{0.25,0.5,0.35}
+\definecolor{string}{rgb}{0.58,0,0.13}
+\definecolor{bgdark}{HTML}{2D2D2D}
 
 \usepackage{tikz}
 \usetikzlibrary{shapes.geometric, arrows}
@@ -40,19 +66,6 @@
 	urlcolor=colorEnlace,
 	pdfauthor={Davis Bremdow Salazar Roa},
 	pdftitle={Transmisión TDM - Telecomunicaciones II}
-}
-\lstset{
-	language=C,
-	basicstyle=\ttfamily\small,
-	keywordstyle=\color{blue},
-	stringstyle=\color{red},
-	commentstyle=\color{green!60!black},
-	showstringspaces=false,
-	numbers=left,
-	numberstyle=\tiny\color{gray},
-	frame=none,
-	breaklines=true,
-	tabsize=1
 }
 
 % Control 
@@ -81,7 +94,7 @@
 		
 	\end{abstract}
 	\begin{IEEEkeywords}
-		Transmisión de datos, Ancho de banda, PCM, TDM, sincronización de canal
+		Transmisión de datos, Ancho de banda, PCM, TDM, sincronización de canal, Multiplexación de información
 	\end{IEEEkeywords}
 	
 	\section{Introducción}
@@ -119,6 +132,16 @@
 	Siendo para el presente caso el empleo del primer método, en la cual se hace de un canal externo para sincronizar las señales de conmutación en ambos extremos del enlace, permitiendo recuperar de forma efectiva las señales multiplexadas en el tiempo requiriendo sin embargo una canal adicional para sincronizar correctamente la frecuencia de muestreo desde el emisor en el receptor menguando el propósito de una comunicación TDM que busca reducir el uso de canales para la transmisión de información ubicándose en las aplicaciones práctica el empleo del segundo método en la cual se hace uso de una cantidad de bits en la parte final de una trama para la sincronización de la señales.
 	
 	\section{Simulación}
+	
+	Para la emulación de una señal TDM el proceso guía estuvo conformado por varías etapas entre las cuales se destacan:
+	\begin{enumerate}
+		\item Elección del software a implementar
+		\item Generación de las señales o información para la transmisión
+		\item El multiplexado por división de tiempo
+		\item El proceso inverso y/o recuperación de la señal
+	\end{enumerate}
+		
+	\subsection{Lenguaje de programación}
 	% Mezclar imágenes y partes del código para explicar el procedimiento obtenido
 	Durante la experiencia para la emulación de una transmisión mediante TDM se consideraron en primera instancia las diferentes herramientas de programación existentes ubicándose entre todas ellas por ejemplo 
 	
@@ -130,22 +153,35 @@
 	
 	Cabe mencionar que el presente experimento al tratarse de una simulación a nivel digital cualquier lenguaje de programación es apto para su desarrollo, sin embargo lenguajes como Python o MATLAB brinda cierta facilidad con herramientas integradas para la generación de interfaces gráficas o figuras para mostrar los resultados así como librerías que facilitan el grabado y reproducción de audio en tiempo real.
 	
-	Dentro de las virtudes observadas para cada lenguaje de programación listado se decidio finalmente por MATLAB por su integración de la librería \textit{audiorecord} y su fortaleza para la manipulación de arreglos otorgando una gran ventaja adicional gracias a su IDE o entorno de programación que permite administrar las variables creadas así como sus dimensiones.
+	Dentro de las virtudes observadas para cada lenguaje de programación listado se decidió finalmente por MATLAB por su integración de la librería \textit{audiorecord} y su fortaleza para la manipulación de matrices fila, columna o multidimensionales otorgando una gran ventaja adicional gracias a su IDE o entorno de programación que permite administrar las variables creadas así como sus dimensiones.
 	
+	\subsection{Generación de las señales}
+	
+	En esta segunda etapa del desarrollo emulado se considero un archivo \textbf{.m} en el cual se hace uso del objeto \mintinline[bgcolor=white, style=friendly]{matlab}|audiorecorder| para la generación de archivos de audio con una duración de 3 segundos cada uno para limitar la cantidad de muestras generadas potenciando esta función mediante variables de estado registrando eficazmente según lo requerido.
+	
+	El objeto \textit{audiorecorder} por defecto cuenta con una frecuencia de muestreo 8K [Hz] obteniendo así por cada señal de audio 24000 datos digitales.
 	
 	\begin{figure}[h]
 		\centering
-		\includegraphics[width=0.5\linewidth]{media/input-signals-voice}
+		\includegraphics[width=0.5\textwidth]{media/input-signals-voice}
 		\caption{Señales de voz de entrada}
 		\label{fig:input-signals-voice}
 	\end{figure}
 	
 	\begin{figure}[h]
 		\centering
-		\includegraphics[width=0.5\linewidth]{media/tmd-signal-and-noise}
+		\includegraphics[width=0.5\textwidth]{media/tmd-signal-and-noise}
 		\caption{Señal TDM - Señal TDM con ruido (AWGN agregado)}
 		\label{fig:tmd-signal-and-noise}
 	\end{figure}
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.5\textwidth]{media/demux-tdm-signal-noise}
+		\caption{Señal TDM + Noise demultiplexada}
+		\label{fig:demux-tdm-signal-noise}
+	\end{figure}
+	
 	
 	\section{Resultados}
 	
@@ -154,6 +190,5 @@
 	% Código general aplicado y capturas de los archivos empleados para la simulación
 	\bibliographystyle{IEEEtran}
 	\bibliography{biblio}
-	
 	\section{Anexos}
 \end{document}

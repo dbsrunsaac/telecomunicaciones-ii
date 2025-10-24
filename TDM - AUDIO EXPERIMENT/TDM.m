@@ -79,10 +79,10 @@ figure(1)
 for i=1:N
     subplot(N,1,i)
     stairs(tx,u(i,:));
-    xlabel('Time(s)');
-    ylabel('Amplitude');  
+    xlabel('Tiempo [s]');
+    ylabel('Amplitud');  
     if i==1
-        title('User Voice Data')
+        title('Senal de voz')
     end
 end
 

@@ -1,11 +1,10 @@
-%----------------------------------------------------
-% DOCUMENTO BASE LATEX CON MINTED
-%----------------------------------------------------
-\documentclass[12pt,a4paper]{article}
+\documentclass[11pt]{article}
 
-%----------------------------------------------------
-% PAQUETES BÁSICOS
-%----------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage{minted2}
+\usepackage{shellesc}
+% minted: syntax highlighting via Pygments
+
 \usepackage[utf8]{inputenc}      % Codificación UTF-8
 \usepackage[T1]{fontenc}         % Acentos y caracteres especiales
 \usepackage[spanish]{babel}      % Idioma español
@@ -14,121 +13,72 @@
 \usepackage{geometry}            % Márgenes
 \geometry{margin=2.5cm}
 
-%----------------------------------------------------
-% CONFIGURACIÓN DE MINTED
-%----------------------------------------------------
-\usepackage[]{minted}              % Paquete para código con resaltado
+\definecolor{bg}{rgb}{0.95,0.95,0.95}
+\definecolor{keyword}{rgb}{0.13,0.13,1}
+\definecolor{comment}{rgb}{0.25,0.5,0.35}
+\definecolor{string}{rgb}{0.58,0,0.13}
+\definecolor{bgdark}{HTML}{2D2D2D}
+
+\usepackage{courier}
+% Opciones globales (opcional)
 \setminted{
 	frame=lines,                 % Marco superior e inferior
 	framesep=2mm,                % Espaciado del marco
 	baselinestretch=1.1,         % Espaciado entre líneas
-	fontsize=\small,             % Tamaño de fuente
+	fontsize=\small,     		 % Tamaño de fuente
 	linenos,                     % Números de línea
 	breaklines,                  % Saltar líneas largas
 	bgcolor=gray!5,              % Fondo gris claro
 	tabsize=4,                   % Tamaño de tabulación
 	autogobble,                  % Ajusta indentación automáticamente
-	xleftmargin=1em              % Margen izquierdo
+	xleftmargin=1em,             % Margen izquierdo,
+	fontfamily=pcr
 }
 
-%----------------------------------------------------
-% OPCIONAL: COLORES PERSONALIZADOS PARA MINTED
-%----------------------------------------------------
-\definecolor{bg}{rgb}{0.95,0.95,0.95}
-\definecolor{keyword}{rgb}{0.13,0.13,1}
-\definecolor{comment}{rgb}{0.25,0.5,0.35}
-\definecolor{string}{rgb}{0.58,0,0.13}
-
-% Puedes usar estos colores con minted styles o crear tus propios estilos
-
-%----------------------------------------------------
-% TÍTULO DEL DOCUMENTO
-%----------------------------------------------------
-\title{Ejemplo de Documento con Código Fuente usando Minted}
-\author{Tu Nombre}
-\date{\today}
-
-%----------------------------------------------------
-% INICIO DEL DOCUMENTO
-%----------------------------------------------------
 \begin{document}
 	
-	\maketitle
-	\tableofcontents
-	\newpage
+	\section*{Ejemplo con minted}
 	
-	%----------------------------------------------------
-	% SECCIÓN 1: INTRODUCCIÓN
-	%----------------------------------------------------
-	\section{Introducción}
+	Aquí un fragmento en Python:
 	
-	En este documento se muestra cómo insertar código fuente con formato profesional usando el paquete \texttt{minted}.  
-	Recuerda compilar con el siguiente comando:
-	
-	\begin{verbatim}
-		pdflatex -shell-escape archivo.tex
-	\end{verbatim}
-	
-	%----------------------------------------------------
-	% SECCIÓN 2: EJEMPLOS DE CÓDIGO
-	%----------------------------------------------------
-	\section{Ejemplos de código}
-	
-	\subsection{Código en Python}
-	\begin{minted}[bgcolor=bg, style=friendly]{python}
+	\begin{minted}[bgcolor=bg, style=solarized-light]{python}
+		import sys
+		import cv2 # image management
 		def saludo(nombre):
-		print(f"Hola, {nombre}!")
+			print(f"Bienvenido {nombre}!")
 		
+		def operaciones():
+			return saludo() + "ve a caminar"
+			
 		if __name__ == "__main__":
-		saludo("Bremdow")
-	\end{minted}
-	
-	\subsection{Código en C}
-	\begin{minted}[style=monokai]{c}
-		#include <stdio.h>
+			saludo("Mundo")
 		
-		int main() {
-			printf("Hola, mundo!\n");
-			return 0;
-		}
 	\end{minted}
 	
-	\subsection{Código en MATLAB}
-	\begin{minted}[style=borland]{matlab}
-		x = 0:0.1:2*pi;
-		y = sin(x);
-		plot(x, y);
-		title('Señal Senoidal');
-		xlabel('Tiempo');
-		ylabel('Amplitud');
+	\section*{Other example}
+	\begin{minted}[bgcolor=bgdark, style=monokai]{python}
+		def fib(n):
+		a, b = 0, 1
+		while a < n:
+		yield a
+		a, b = b, a + b
+		
+		print(list(fib(10)))
 	\end{minted}
 	
-	%----------------------------------------------------
-	% SECCIÓN 3: CÓDIGO EN BLOQUES CON TÍTULO
-	%----------------------------------------------------
-	\section{Código dentro de un entorno con título}
-	
-	\begin{minted}[H]
-		\caption{Ejemplo de función en C#}
-		\begin{minted}[bgcolor=bg, linenos, style=colorful]{csharp}
-			public static void Saludo(string nombre)
-			{
-				Console.WriteLine($"Hola, {nombre}!");
-			}
-		\end{minted}
+	\section*{Example with MATLAB}
+	\begin{minted}[bgcolor=bg, style=friendly]{matlab}
+		x1 = 240;
+		x2 = 40;
+		x3 = x1 + x2;
+		
+		% Agregando valores al arreglo
+		disp(["El valor de x3 es: ", x3]);
 	\end{minted}
 	
-	%----------------------------------------------------
-	% SECCIÓN 4: CÓDIGO EN LÍNEA
-	%----------------------------------------------------
-	\section{Código en línea}
-	
-	Puedes insertar código dentro del texto como:
-	\mintinline{python}{print("Hola Mundo")}
-	
-	O incluso en C: \mintinline{c}{printf("Hola Mundo");}
-	
-	%----------------------------------------------------
-	% FIN DEL DOCUMENTO
-	%----------------------------------------------------
+	\ifcase\ShellEscapeStatus
+	Shell escape **no está habilitado**\or
+	Shell escape **completo**\or
+	Shell escape **restringido**
+	\fi
 \end{document}
