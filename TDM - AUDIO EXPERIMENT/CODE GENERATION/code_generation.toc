@@ -1,8 +1,0 @@
-\babel@toc {spanish}{}\relax 
-\contentsline {section}{\numberline {1}Introducción}{2}{}%
-\contentsline {section}{\numberline {2}Ejemplos de código}{2}{}%
-\contentsline {subsection}{\numberline {2.1}Código en Python}{2}{}%
-\contentsline {subsection}{\numberline {2.2}Código en C}{2}{}%
-\contentsline {subsection}{\numberline {2.3}Código en MATLAB}{2}{}%
-\contentsline {section}{\numberline {3}Código dentro de un entorno con título}{3}{}%
-\contentsline {section}{\numberline {4}Código en línea}{3}{}%

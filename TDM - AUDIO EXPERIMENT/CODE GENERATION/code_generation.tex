@@ -17,7 +17,7 @@
 %----------------------------------------------------
 % CONFIGURACIÓN DE MINTED
 %----------------------------------------------------
-\usepackage{minted}              % Paquete para código con resaltado
+\usepackage[]{minted}              % Paquete para código con resaltado
 \setminted{
 	frame=lines,                 % Marco superior e inferior
 	framesep=2mm,                % Espaciado del marco
@@ -108,7 +108,7 @@
 	%----------------------------------------------------
 	\section{Código dentro de un entorno con título}
 	
-	\begin{listing}[H]
+	\begin{minted}[H]
 		\caption{Ejemplo de función en C#}
 		\begin{minted}[bgcolor=bg, linenos, style=colorful]{csharp}
 			public static void Saludo(string nombre)
@@ -116,7 +116,7 @@
 				Console.WriteLine($"Hola, {nombre}!");
 			}
 		\end{minted}
-	\end{listing}
+	\end{minted}
 	
 	%----------------------------------------------------
 	% SECCIÓN 4: CÓDIGO EN LÍNEA
