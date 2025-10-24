@@ -1,0 +1,134 @@
+%----------------------------------------------------
+% DOCUMENTO BASE LATEX CON MINTED
+%----------------------------------------------------
+\documentclass[12pt,a4paper]{article}
+
+%----------------------------------------------------
+% PAQUETES BÁSICOS
+%----------------------------------------------------
+\usepackage[utf8]{inputenc}      % Codificación UTF-8
+\usepackage[T1]{fontenc}         % Acentos y caracteres especiales
+\usepackage[spanish]{babel}      % Idioma español
+\usepackage{lmodern}             % Fuente moderna y clara
+\usepackage{xcolor}              % Colores personalizados
+\usepackage{geometry}            % Márgenes
+\geometry{margin=2.5cm}
+
+%----------------------------------------------------
+% CONFIGURACIÓN DE MINTED
+%----------------------------------------------------
+\usepackage{minted}              % Paquete para código con resaltado
+\setminted{
+	frame=lines,                 % Marco superior e inferior
+	framesep=2mm,                % Espaciado del marco
+	baselinestretch=1.1,         % Espaciado entre líneas
+	fontsize=\small,             % Tamaño de fuente
+	linenos,                     % Números de línea
+	breaklines,                  % Saltar líneas largas
+	bgcolor=gray!5,              % Fondo gris claro
+	tabsize=4,                   % Tamaño de tabulación
+	autogobble,                  % Ajusta indentación automáticamente
+	xleftmargin=1em              % Margen izquierdo
+}
+
+%----------------------------------------------------
+% OPCIONAL: COLORES PERSONALIZADOS PARA MINTED
+%----------------------------------------------------
+\definecolor{bg}{rgb}{0.95,0.95,0.95}
+\definecolor{keyword}{rgb}{0.13,0.13,1}
+\definecolor{comment}{rgb}{0.25,0.5,0.35}
+\definecolor{string}{rgb}{0.58,0,0.13}
+
+% Puedes usar estos colores con minted styles o crear tus propios estilos
+
+%----------------------------------------------------
+% TÍTULO DEL DOCUMENTO
+%----------------------------------------------------
+\title{Ejemplo de Documento con Código Fuente usando Minted}
+\author{Tu Nombre}
+\date{\today}
+
+%----------------------------------------------------
+% INICIO DEL DOCUMENTO
+%----------------------------------------------------
+\begin{document}
+	
+	\maketitle
+	\tableofcontents
+	\newpage
+	
+	%----------------------------------------------------
+	% SECCIÓN 1: INTRODUCCIÓN
+	%----------------------------------------------------
+	\section{Introducción}
+	
+	En este documento se muestra cómo insertar código fuente con formato profesional usando el paquete \texttt{minted}.  
+	Recuerda compilar con el siguiente comando:
+	
+	\begin{verbatim}
+		pdflatex -shell-escape archivo.tex
+	\end{verbatim}
+	
+	%----------------------------------------------------
+	% SECCIÓN 2: EJEMPLOS DE CÓDIGO
+	%----------------------------------------------------
+	\section{Ejemplos de código}
+	
+	\subsection{Código en Python}
+	\begin{minted}[bgcolor=bg, style=friendly]{python}
+		def saludo(nombre):
+		print(f"Hola, {nombre}!")
+		
+		if __name__ == "__main__":
+		saludo("Bremdow")
+	\end{minted}
+	
+	\subsection{Código en C}
+	\begin{minted}[style=monokai]{c}
+		#include <stdio.h>
+		
+		int main() {
+			printf("Hola, mundo!\n");
+			return 0;
+		}
+	\end{minted}
+	
+	\subsection{Código en MATLAB}
+	\begin{minted}[style=borland]{matlab}
+		x = 0:0.1:2*pi;
+		y = sin(x);
+		plot(x, y);
+		title('Señal Senoidal');
+		xlabel('Tiempo');
+		ylabel('Amplitud');
+	\end{minted}
+	
+	%----------------------------------------------------
+	% SECCIÓN 3: CÓDIGO EN BLOQUES CON TÍTULO
+	%----------------------------------------------------
+	\section{Código dentro de un entorno con título}
+	
+	\begin{listing}[H]
+		\caption{Ejemplo de función en C#}
+		\begin{minted}[bgcolor=bg, linenos, style=colorful]{csharp}
+			public static void Saludo(string nombre)
+			{
+				Console.WriteLine($"Hola, {nombre}!");
+			}
+		\end{minted}
+	\end{listing}
+	
+	%----------------------------------------------------
+	% SECCIÓN 4: CÓDIGO EN LÍNEA
+	%----------------------------------------------------
+	\section{Código en línea}
+	
+	Puedes insertar código dentro del texto como:
+	\mintinline{python}{print("Hola Mundo")}
+	
+	O incluso en C: \mintinline{c}{printf("Hola Mundo");}
+	
+	%----------------------------------------------------
+	% FIN DEL DOCUMENTO
+	%----------------------------------------------------
+\end{document}

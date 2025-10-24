@@ -119,16 +119,41 @@
 	Siendo para el presente caso el empleo del primer método, en la cual se hace de un canal externo para sincronizar las señales de conmutación en ambos extremos del enlace, permitiendo recuperar de forma efectiva las señales multiplexadas en el tiempo requiriendo sin embargo una canal adicional para sincronizar correctamente la frecuencia de muestreo desde el emisor en el receptor menguando el propósito de una comunicación TDM que busca reducir el uso de canales para la transmisión de información ubicándose en las aplicaciones práctica el empleo del segundo método en la cual se hace uso de una cantidad de bits en la parte final de una trama para la sincronización de la señales.
 	
 	\section{Simulación}
-	
 	% Mezclar imágenes y partes del código para explicar el procedimiento obtenido
+	Durante la experiencia para la emulación de una transmisión mediante TDM se consideraron en primera instancia las diferentes herramientas de programación existentes ubicándose entre todas ellas por ejemplo 
+	
+	\begin{enumerate}
+		\item Python
+		\item Javascript
+		\item MATLAB
+	\end{enumerate}
+	
+	Cabe mencionar que el presente experimento al tratarse de una simulación a nivel digital cualquier lenguaje de programación es apto para su desarrollo, sin embargo lenguajes como Python o MATLAB brinda cierta facilidad con herramientas integradas para la generación de interfaces gráficas o figuras para mostrar los resultados así como librerías que facilitan el grabado y reproducción de audio en tiempo real.
+	
+	Dentro de las virtudes observadas para cada lenguaje de programación listado se decidio finalmente por MATLAB por su integración de la librería \textit{audiorecord} y su fortaleza para la manipulación de arreglos otorgando una gran ventaja adicional gracias a su IDE o entorno de programación que permite administrar las variables creadas así como sus dimensiones.
+	
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.5\linewidth]{media/input-signals-voice}
+		\caption{Señales de voz de entrada}
+		\label{fig:input-signals-voice}
+	\end{figure}
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.5\linewidth]{media/tmd-signal-and-noise}
+		\caption{Señal TDM - Señal TDM con ruido (AWGN agregado)}
+		\label{fig:tmd-signal-and-noise}
+	\end{figure}
 	
 	\section{Resultados}
 	
 	% Resumen de lo obtenido para cada etapa
 	
-	\section{Anexos}
-	
 	% Código general aplicado y capturas de los archivos empleados para la simulación
 	\bibliographystyle{IEEEtran}
 	\bibliography{biblio}
+	
+	\section{Anexos}
 \end{document}

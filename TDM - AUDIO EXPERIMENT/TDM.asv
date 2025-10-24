@@ -90,7 +90,7 @@ end
 % Multiplexando la senal
 
 um=tdmm(u,ns);
-% Agregando AWGN (ruido gaussiano aditivo aleatorio)
+% Agregando AWGN (ruido gaussiano aditivo aleaotorio)
 umn=awgn(um,25);
 
 % Plotting: TDM signal with and w/o noise
@@ -98,50 +98,54 @@ figure(2)
 subplot(2,1,1)
 
 stairs(tx,um);
-xlabel('Tiempo [s]');
-ylabel('Amplitud');
-title('Senal TDM')
+xlabel('Time(s)');
+ylabel('Amplitude');
+title('TDM signal')
 
 subplot(2,1,2)
 stairs(tx,umn);
-xlabel('Tiempo [s]');
-ylabel('Amplitud');
-title('Senal + ruido')
+xlabel('Time(s)');
+ylabel('Amplitude');
+title('Signal + Noise')
 
 
 disp('Presiona enter para escuchar la señal multiplexada: ');
 pause
 sound(um)
 
-% Procesando (operacion inversa) - Demultiplexando
+% Procesando las 
 % um -> [Demux] -> ud
 ud=demux(um,ns,N);
 
-% Dividiendo las senales demultiplexadas
+% split demuxed signals into individual user signal
 for b=1:N
     eval(['ux' num2str(b) '=ud(' num2str(b) ',:);' ]);
-end
+end % loop end
 
-% Reproduciendo las senales demultiplexadas 
-display('Presiona enter para escuchar las senales demultiplexadas')
+% Play the demuxed audio signals to observe changes and effect of
+% parameters
+
+% disp('Playing the demuxed user voice stream sequentially with a delay of 1second');
+% 
+display('press enter to hear the demuxed signal')
 pause
 for b=1:N
     
     eval(['sound(ux' num2str(b) ');' ])
-    display('Presionar enter para reproducir la senal demultiplexada')
+    display('press enter to hear the demuxed signal')
     pause
     
 end % loop end
 
-% Graficando las senales demultiplexadas
+% Plotting: Demuxed voice signal
 figure(3)
 for a=1:N
     subplot(N,1,a)
     stairs(tx,ud(a,:));
-    xlabel('Tiempo [s]');
-    ylabel('Amplitud'); 
+    xlabel('Time(s)');
+    ylabel('Amplitude'); 
     if a==1
-        title('Senal Demultiplexada')
+        title('Demuxed Signal')
     end
 end
 
