@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{x1}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m+mi}{240}\PYG{p}{;}
+\PYG{n}{x2}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m+mi}{40}\PYG{p}{;}
+\PYG{n}{x3}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{x1}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{n}{x2}\PYG{p}{;}
+
+\PYG{c}{\PYGZpc{} Agregando valores al arreglo}
+\PYG{n+nb}{disp}\PYG{p}{([}\PYG{l+s}{\PYGZdq{}El valor de x3 es: \PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{x3}\PYG{p}{]);}
+\end{Verbatim}

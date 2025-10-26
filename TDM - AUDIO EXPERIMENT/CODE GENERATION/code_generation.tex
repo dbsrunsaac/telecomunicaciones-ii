@@ -57,12 +57,14 @@
 	
 	\section*{Other example}
 	\begin{minted}[bgcolor=bgdark, style=monokai]{python}
+		"""
+			función para calcular la sería fibonnaci
+		"""
 		def fib(n):
 		a, b = 0, 1
 		while a < n:
-		yield a
-		a, b = b, a + b
-		
+			yield a
+			a, b = b, a + b
 		print(list(fib(10)))
 	\end{minted}
 	
@@ -75,6 +77,19 @@
 		% Agregando valores al arreglo
 		disp(["El valor de x3 es: ", x3]);
 	\end{minted}
+	
+	\begin{listing}[H]
+		\begin{minted}{c}
+			#include <stdio.h>
+			
+			int main() {
+				printf("Hello, World!\n");
+				return 0;
+			}
+		\end{minted}
+		\caption{Programa en C básico}
+		\label{lst:c-program}
+	\end{listing}
 	
 	\ifcase\ShellEscapeStatus
 	Shell escape **no está habilitado**\or

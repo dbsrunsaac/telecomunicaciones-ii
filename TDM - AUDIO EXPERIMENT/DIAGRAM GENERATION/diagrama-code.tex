@@ -1,0 +1,88 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage[spanish]{babel}
+
+\begin{document}
+	
+	\begin{figure}[h]
+		\centering
+		\begin{tikzpicture}[
+			folder/.style={
+				rectangle,
+				minimum height=0.6cm,
+				inner sep=4pt,
+				text width=3.2cm,
+				draw=blue!60,
+				fill=blue!10,
+				rounded corners=2pt,
+				font=\small\sffamily,
+				align=left
+			},
+			root/.style={
+				rectangle,
+				minimum height=0.7cm,
+				inner sep=4pt,
+				text width=3.2cm,
+				draw=red!60,
+				fill=red!5,
+				rounded corners=2pt,
+				font=\small\sffamily\bfseries,
+				align=left
+			}
+			]
+			% Raíz C:
+			\node[root] (croot) {C:.};
+			
+			% Primera columna - Carpetas principales
+			\node[folder, below=0.2cm of croot] (contacts) {Contacts};
+			\node[folder, below=0.1cm of contacts] (desktop) {Desktop};
+			\node[folder, below=0.1cm of desktop] (sistemas) {Sistemas};
+			\node[folder, below=0.1cm of sistemas] (documents) {Documents};
+			\node[folder, below=0.1cm of documents] (downloads) {Downloads};
+			\node[folder, below=0.1cm of downloads] (favorites) {Favorites};
+			\node[folder, below=0.1cm of favorites] (links) {Links};
+			\node[folder, below=0.1cm of links] (sitiosespana) {Sitios for España};
+			\node[folder, below=0.1cm of sitiosespana] (sitiosmicrosoft) {Sitios web de Microsoft};
+			\node[folder, below=0.1cm of sitiosmicrosoft] (sitiosmsn) {Sitios web de MSN};
+			\node[folder, below=0.1cm of sitiosmsn] (windowslive) {Windows Live};
+			
+			% Segunda columna - Carpetas adicionales (al mismo nivel)
+			\node[folder, right=0.5cm of contacts] (links2) {Links};
+			\node[folder, below=0.1cm of links2] (music) {Music};
+			\node[folder, below=0.1cm of music] (pictures) {Pictures};
+			\node[folder, below=0.1cm of pictures] (savedgames) {Saved Games};
+			\node[folder, below=0.1cm of savedgames] (searches) {Searches};
+			\node[folder, below=0.1cm of searches] (videos) {Videos};
+			
+			% Líneas conectivas desde la raíz
+			\draw (croot.south) -- (contacts.north);
+			\draw (contacts.south) -- (desktop.north);
+			\draw (desktop.south) -- (sistemas.north);
+			\draw (sistemas.south) -- (documents.north);
+			\draw (documents.south) -- (downloads.north);
+			\draw (downloads.south) -- (favorites.north);
+			\draw (favorites.south) -- (links.north);
+			\draw (links.south) -- (sitiosespana.north);
+			\draw (sitiosespana.south) -- (sitiosmicrosoft.north);
+			\draw (sitiosmicrosoft.south) -- (sitiosmsn.north);
+			\draw (sitiosmsn.south) -- (windowslive.north);
+			
+			% Líneas para la segunda columna (conectadas también a la raíz)
+			\draw (croot.east) -- ++(0.5,0) |- (links2.west);
+			\draw (links2.south) -- (music.north);
+			\draw (music.south) -- (pictures.north);
+			\draw (pictures.south) -- (savedgames.north);
+			\draw (savedgames.south) -- (searches.north);
+			\draw (searches.south) -- (videos.north);
+			
+			% Información adicional (como en el comando tree)
+			\node[below=0.5cm of windowslive, font=\scriptsize\itshape] (info1) {El número de serie del volumen es C40A-EB9C};
+			\node[below=0.1cm of info1, font=\scriptsize\itshape] (info2) {Estado de rutas de carpetas};
+			
+		\end{tikzpicture}
+		\caption{Estructura de carpetas de Windows - Comando \texttt{tree}}
+		\label{fig:windows_tree_structure}
+	\end{figure}
+	
+\end{document}

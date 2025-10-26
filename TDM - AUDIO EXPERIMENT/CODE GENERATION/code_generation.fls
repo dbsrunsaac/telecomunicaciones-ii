@@ -1,169 +1,184 @@
-PWD C:\Users\Bremdows\UNSAAC\SEMESTRE VIII\TELECOMUNICACIONES II\telecomunicaciones-ii\TDM - AUDIO EXPERIMENT\CODE GENERATION
-INPUT C:\Users\Bremdows\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
+PWD /home/bremdow/UNSAAC/SEMESTRE VIII/TELECOMUNICACIONES II/telecomunicaciones-ii/TDM - AUDIO EXPERIMENT/CODE GENERATION
+INPUT /home/bremdow/.miktex/texmfs/data/miktex/data/le/pdftex/pdflatex.fmt
 INPUT code_generation.tex
 OUTPUT code_generation.log
-INPUT C:\Program Files\MiKTeX\tex\latex\base\article.cls
-INPUT C:\Program Files\MiKTeX\tex\latex\base\article.cls
-INPUT C:\Program Files\MiKTeX\tex\latex\base\size11.clo
-INPUT C:\Program Files\MiKTeX\tex\latex\base\size11.clo
-INPUT C:\Program Files\MiKTeX\tex\latex\base\size11.clo
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr10.tfm
-INPUT C:\Program Files\MiKTeX\tex\latex\base\fontenc.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\base\fontenc.sty
-INPUT C:\Program Files\MiKTeX\fonts\tfm\jknappen\ec\ecrm1095.tfm
-INPUT C:\Program Files\MiKTeX\tex\latex\minted\minted2.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\minted\minted2.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\graphics\keyval.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\graphics\keyval.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\kvoptions\kvoptions.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\kvoptions\kvoptions.sty
-INPUT C:\Program Files\MiKTeX\tex\generic\ltxcmds\ltxcmds.sty
-INPUT C:\Program Files\MiKTeX\tex\generic\ltxcmds\ltxcmds.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\kvsetkeys\kvsetkeys.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\kvsetkeys\kvsetkeys.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\fvextra\fvextra.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\fvextra\fvextra.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\etoolbox\etoolbox.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\etoolbox\etoolbox.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\fancyvrb\fancyvrb.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\fancyvrb\fancyvrb.sty
-INPUT C:\Program Files\MiKTeX\tex\generic\pdftexcmds\pdftexcmds.sty
-INPUT C:\Program Files\MiKTeX\tex\generic\pdftexcmds\pdftexcmds.sty
-INPUT C:\Program Files\MiKTeX\tex\generic\infwarerr\infwarerr.sty
-INPUT C:\Program Files\MiKTeX\tex\generic\infwarerr\infwarerr.sty
-INPUT C:\Program Files\MiKTeX\tex\generic\iftex\iftex.sty
-INPUT C:\Program Files\MiKTeX\tex\generic\iftex\iftex.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\upquote\upquote.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\upquote\upquote.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\base\textcomp.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\base\textcomp.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\lineno\lineno.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\lineno\lineno.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\base\ifthen.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\base\ifthen.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\tools\shellesc.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\tools\shellesc.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\tools\shellesc.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\ifplatform\ifplatform.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\ifplatform\ifplatform.sty
-INPUT C:\Program Files\MiKTeX\tex\generic\catchfile\catchfile.sty
-INPUT C:\Program Files\MiKTeX\tex\generic\catchfile\catchfile.sty
-INPUT C:\Program Files\MiKTeX\tex\generic\etexcmds\etexcmds.sty
-INPUT C:\Program Files\MiKTeX\tex\generic\etexcmds\etexcmds.sty
-INPUT C:\Program Files\MiKTeX\tex\generic\iftex\ifluatex.sty
-INPUT C:\Program Files\MiKTeX\tex\generic\iftex\ifluatex.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\xstring\xstring.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\xstring\xstring.sty
-INPUT C:\Program Files\MiKTeX\tex\generic\xstring\xstring.tex
-INPUT C:\Program Files\MiKTeX\tex\latex\framed\framed.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\framed\framed.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\float\float.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\float\float.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\base\inputenc.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\base\inputenc.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\base\fontenc.sty
-INPUT C:\Program Files\MiKTeX\tex\generic\babel\babel.sty
-INPUT C:\Program Files\MiKTeX\tex\generic\babel\babel.sty
-INPUT C:\Program Files\MiKTeX\tex\generic\babel\txtbabel.def
-INPUT C:\Program Files\MiKTeX\tex\latex\arabi\bblopts.cfg
-INPUT C:\Program Files\MiKTeX\tex\latex\arabi\bblopts.cfg
-INPUT C:\Program Files\MiKTeX\tex\latex\arabi\bblopts.cfg
-INPUT C:\Program Files\MiKTeX\tex\latex\babel-spanish\spanish.ldf
-INPUT C:\Program Files\MiKTeX\tex\latex\babel-spanish\spanish.ldf
-INPUT C:\Program Files\MiKTeX\tex\latex\babel-spanish\spanish.ldf
-INPUT C:\Program Files\MiKTeX\tex\generic\babel\locale\es\babel-spanish.tex
-INPUT C:\Program Files\MiKTeX\tex\generic\babel\locale\es\babel-spanish.tex
-INPUT C:\Program Files\MiKTeX\tex\generic\babel\locale\es\babel-spanish.tex
-INPUT C:\Program Files\MiKTeX\tex\generic\babel\locale\es\babel-es.ini
-INPUT C:\Program Files\MiKTeX\tex\latex\lm\lmodern.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\lm\lmodern.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\xcolor\xcolor.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\xcolor\xcolor.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\graphics-cfg\color.cfg
-INPUT C:\Program Files\MiKTeX\tex\latex\graphics-cfg\color.cfg
-INPUT C:\Program Files\MiKTeX\tex\latex\graphics-cfg\color.cfg
-INPUT C:\Program Files\MiKTeX\tex\latex\graphics-def\pdftex.def
-INPUT C:\Program Files\MiKTeX\tex\latex\graphics-def\pdftex.def
-INPUT C:\Program Files\MiKTeX\tex\latex\graphics-def\pdftex.def
-INPUT C:\Program Files\MiKTeX\tex\latex\graphics\mathcolor.ltx
-INPUT C:\Program Files\MiKTeX\tex\latex\graphics\mathcolor.ltx
-INPUT C:\Program Files\MiKTeX\tex\latex\graphics\mathcolor.ltx
-INPUT C:\Program Files\MiKTeX\tex\latex\geometry\geometry.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\geometry\geometry.sty
-INPUT C:\Program Files\MiKTeX\tex\generic\iftex\ifvtex.sty
-INPUT C:\Program Files\MiKTeX\tex\generic\iftex\ifvtex.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\geometry\geometry.cfg
-INPUT C:\Program Files\MiKTeX\tex\latex\geometry\geometry.cfg
-INPUT C:\Program Files\MiKTeX\tex\latex\geometry\geometry.cfg
-INPUT C:\Program Files\MiKTeX\tex\latex\psnfss\courier.sty
-INPUT C:\Program Files\MiKTeX\tex\latex\psnfss\courier.sty
-INPUT code_generation.aex
-INPUT .\code_generation.aex
-INPUT .\code_generation.aex
-INPUT C:\Program Files\MiKTeX\tex\latex\lm\t1lmr.fd
-INPUT C:\Program Files\MiKTeX\tex\latex\lm\t1lmr.fd
-INPUT C:\Program Files\MiKTeX\tex\latex\lm\t1lmr.fd
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\lm\ec-lmr10.tfm
-INPUT C:\Program Files\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
-INPUT C:\Program Files\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
-INPUT .\code_generation.aux
-INPUT .\code_generation.aux
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/base/article.cls
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/base/article.cls
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/base/size11.clo
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/base/size11.clo
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/base/size11.clo
+INPUT /home/bremdow/.miktex/texmfs/install/fonts/tfm/public/cm/cmr10.tfm
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/base/fontenc.sty
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/base/fontenc.sty
+INPUT /home/bremdow/.miktex/texmfs/install/fonts/tfm/jknappen/ec/ecrm1095.tfm
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/minted/minted2.sty
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/minted/minted2.sty
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/graphics/keyval.sty
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/graphics/keyval.sty
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/kvoptions/kvoptions.sty
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/kvoptions/kvoptions.sty
+INPUT /home/bremdow/.miktex/texmfs/install/tex/generic/ltxcmds/ltxcmds.sty
+INPUT /home/bremdow/.miktex/texmfs/install/tex/generic/ltxcmds/ltxcmds.sty
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/kvsetkeys/kvsetkeys.sty
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/kvsetkeys/kvsetkeys.sty
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/fvextra/fvextra.sty
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/fvextra/fvextra.sty
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/etoolbox/etoolbox.sty
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/etoolbox/etoolbox.sty
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/fancyvrb/fancyvrb.sty
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/fancyvrb/fancyvrb.sty
+INPUT /home/bremdow/.miktex/texmfs/install/tex/generic/pdftexcmds/pdftexcmds.sty
+INPUT /home/bremdow/.miktex/texmfs/install/tex/generic/pdftexcmds/pdftexcmds.sty
+INPUT /home/bremdow/.miktex/texmfs/install/tex/generic/infwarerr/infwarerr.sty
+INPUT /home/bremdow/.miktex/texmfs/install/tex/generic/infwarerr/infwarerr.sty
+INPUT /home/bremdow/.miktex/texmfs/install/tex/generic/iftex/iftex.sty
+INPUT /home/bremdow/.miktex/texmfs/install/tex/generic/iftex/iftex.sty
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/upquote/upquote.sty
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/upquote/upquote.sty
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/base/textcomp.sty
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/base/textcomp.sty
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/lineno/lineno.sty
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/lineno/lineno.sty
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/base/ifthen.sty
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/base/ifthen.sty
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/tools/shellesc.sty
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/tools/shellesc.sty
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/tools/shellesc.sty
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/ifplatform/ifplatform.sty
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/ifplatform/ifplatform.sty
+INPUT /home/bremdow/.miktex/texmfs/install/tex/generic/catchfile/catchfile.sty
+INPUT /home/bremdow/.miktex/texmfs/install/tex/generic/catchfile/catchfile.sty
+INPUT /home/bremdow/.miktex/texmfs/install/tex/generic/etexcmds/etexcmds.sty
+INPUT /home/bremdow/.miktex/texmfs/install/tex/generic/etexcmds/etexcmds.sty
+INPUT /home/bremdow/.miktex/texmfs/install/tex/generic/iftex/ifluatex.sty
+INPUT /home/bremdow/.miktex/texmfs/install/tex/generic/iftex/ifluatex.sty
+INPUT ./code_generation.w18
+INPUT ./code_generation.w18
+INPUT code_generation.w18
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/xstring/xstring.sty
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/xstring/xstring.sty
+INPUT /home/bremdow/.miktex/texmfs/install/tex/generic/xstring/xstring.tex
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/framed/framed.sty
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/framed/framed.sty
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/float/float.sty
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/float/float.sty
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/base/inputenc.sty
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/base/inputenc.sty
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/base/fontenc.sty
+INPUT /home/bremdow/.miktex/texmfs/install/tex/generic/babel/babel.sty
+INPUT /home/bremdow/.miktex/texmfs/install/tex/generic/babel/babel.sty
+INPUT /home/bremdow/.miktex/texmfs/install/tex/generic/babel/txtbabel.def
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/arabi/bblopts.cfg
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/arabi/bblopts.cfg
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/arabi/bblopts.cfg
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/babel-spanish/spanish.ldf
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/babel-spanish/spanish.ldf
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/babel-spanish/spanish.ldf
+INPUT /home/bremdow/.miktex/texmfs/install/tex/generic/babel/locale/es/babel-spanish.tex
+INPUT /home/bremdow/.miktex/texmfs/install/tex/generic/babel/locale/es/babel-spanish.tex
+INPUT /home/bremdow/.miktex/texmfs/install/tex/generic/babel/locale/es/babel-spanish.tex
+INPUT /home/bremdow/.miktex/texmfs/install/tex/generic/babel/locale/es/babel-es.ini
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/lm/lmodern.sty
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/lm/lmodern.sty
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/xcolor/xcolor.sty
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/xcolor/xcolor.sty
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/graphics-cfg/color.cfg
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/graphics-cfg/color.cfg
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/graphics-cfg/color.cfg
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/graphics-def/pdftex.def
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/graphics-def/pdftex.def
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/graphics-def/pdftex.def
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/graphics/mathcolor.ltx
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/graphics/mathcolor.ltx
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/graphics/mathcolor.ltx
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/geometry/geometry.sty
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/geometry/geometry.sty
+INPUT /home/bremdow/.miktex/texmfs/install/tex/generic/iftex/ifvtex.sty
+INPUT /home/bremdow/.miktex/texmfs/install/tex/generic/iftex/ifvtex.sty
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/geometry/geometry.cfg
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/geometry/geometry.cfg
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/geometry/geometry.cfg
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/psnfss/courier.sty
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/psnfss/courier.sty
+INPUT ./code_generation.aex
+INPUT ./code_generation.aex
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/lm/t1lmr.fd
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/lm/t1lmr.fd
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/lm/t1lmr.fd
+INPUT /home/bremdow/.miktex/texmfs/install/fonts/tfm/public/lm/ec-lmr10.tfm
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/l3backend-dev/l3backend-pdftex.def
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/l3backend-dev/l3backend-pdftex.def
+INPUT ./code_generation.aux
+INPUT ./code_generation.aux
 INPUT code_generation.aux
 OUTPUT code_generation.aux
-INPUT C:\Program Files\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
-INPUT C:\Program Files\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
-INPUT C:\Program Files\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\lm\ec-lmr12.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\lm\ec-lmbx12.tfm
+INPUT /home/bremdow/.miktex/texmfs/install/tex/context/base/mkii/supp-pdf.mkii
+INPUT /home/bremdow/.miktex/texmfs/install/tex/context/base/mkii/supp-pdf.mkii
+INPUT /home/bremdow/.miktex/texmfs/install/tex/context/base/mkii/supp-pdf.mkii
+INPUT /home/bremdow/.miktex/texmfs/install/fonts/tfm/public/lm/ec-lmr12.tfm
+INPUT /home/bremdow/.miktex/texmfs/install/fonts/tfm/public/lm/ec-lmbx12.tfm
 OUTPUT code_generation.pyg
-INPUT .\_minted-code_generation\solarized-light.pygstyle
-INPUT .\_minted-code_generation\solarized-light.pygstyle
-INPUT _minted-code_generation\solarized-light.pygstyle
-INPUT .\code_generation.pyg
-INPUT .\_minted-code_generation\B592C1213401174A48F5951D5CCE77D4245CA256E731CAA289DF389B91750CBD.pygtex
-INPUT .\_minted-code_generation\B592C1213401174A48F5951D5CCE77D4245CA256E731CAA289DF389B91750CBD.pygtex
-INPUT _minted-code_generation\B592C1213401174A48F5951D5CCE77D4245CA256E731CAA289DF389B91750CBD.pygtex
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\lm\ec-lmr10.tfm
-INPUT C:\Program Files\MiKTeX\tex\latex\psnfss\t1pcr.fd
-INPUT C:\Program Files\MiKTeX\tex\latex\psnfss\t1pcr.fd
-INPUT C:\Program Files\MiKTeX\tex\latex\psnfss\t1pcr.fd
-INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\courier\pcrr8t.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\lm\ec-lmr6.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\courier\pcrro8t.tfm
+INPUT ./_minted-code_generation/solarized-light.pygstyle
+INPUT ./_minted-code_generation/solarized-light.pygstyle
+INPUT _minted-code_generation/solarized-light.pygstyle
+INPUT ./code_generation.pyg
+INPUT ./_minted-code_generation/B592C1213401174A48F5951D5CCE77D45FC186CC243FDF140531576EB61668E5.pygtex
+INPUT ./_minted-code_generation/B592C1213401174A48F5951D5CCE77D45FC186CC243FDF140531576EB61668E5.pygtex
+INPUT _minted-code_generation/B592C1213401174A48F5951D5CCE77D45FC186CC243FDF140531576EB61668E5.pygtex
+INPUT /home/bremdow/.miktex/texmfs/install/fonts/tfm/public/lm/ec-lmr10.tfm
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/psnfss/t1pcr.fd
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/psnfss/t1pcr.fd
+INPUT /home/bremdow/.miktex/texmfs/install/tex/latex/psnfss/t1pcr.fd
+INPUT /home/bremdow/.miktex/texmfs/install/fonts/tfm/adobe/courier/pcrr8t.tfm
+INPUT /home/bremdow/.miktex/texmfs/install/fonts/tfm/public/lm/ec-lmr6.tfm
+INPUT /home/bremdow/.miktex/texmfs/install/fonts/tfm/adobe/courier/pcrro8t.tfm
 OUTPUT code_generation.pyg
-INPUT .\_minted-code_generation\monokai.pygstyle
-INPUT .\_minted-code_generation\monokai.pygstyle
-INPUT _minted-code_generation\monokai.pygstyle
-INPUT .\code_generation.pyg
-INPUT .\_minted-code_generation\47985F99B579EE5ECE2DBA13A2EF2806245CA256E731CAA289DF389B91750CBD.pygtex
-INPUT .\_minted-code_generation\47985F99B579EE5ECE2DBA13A2EF2806245CA256E731CAA289DF389B91750CBD.pygtex
-INPUT _minted-code_generation\47985F99B579EE5ECE2DBA13A2EF2806245CA256E731CAA289DF389B91750CBD.pygtex
+INPUT ./_minted-code_generation/monokai.pygstyle
+INPUT ./_minted-code_generation/monokai.pygstyle
+INPUT _minted-code_generation/monokai.pygstyle
+INPUT ./code_generation.pyg
+INPUT ./_minted-code_generation/1658CAFAD8ECCE020F87E41F06C102EB5FC186CC243FDF140531576EB61668E5.pygtex
+INPUT ./_minted-code_generation/1658CAFAD8ECCE020F87E41F06C102EB5FC186CC243FDF140531576EB61668E5.pygtex
+INPUT _minted-code_generation/1658CAFAD8ECCE020F87E41F06C102EB5FC186CC243FDF140531576EB61668E5.pygtex
 OUTPUT code_generation.pyg
-INPUT .\_minted-code_generation\friendly.pygstyle
-INPUT .\_minted-code_generation\friendly.pygstyle
-INPUT _minted-code_generation\friendly.pygstyle
-INPUT .\code_generation.pyg
-INPUT .\_minted-code_generation\3D3AC14A4DE372E3038EB2F3D656C38184E3E60833B67B5FE7971449989323C5.pygtex
-INPUT .\_minted-code_generation\3D3AC14A4DE372E3038EB2F3D656C38184E3E60833B67B5FE7971449989323C5.pygtex
-INPUT _minted-code_generation\3D3AC14A4DE372E3038EB2F3D656C38184E3E60833B67B5FE7971449989323C5.pygtex
+INPUT ./_minted-code_generation/friendly.pygstyle
+INPUT ./_minted-code_generation/friendly.pygstyle
+INPUT _minted-code_generation/friendly.pygstyle
+INPUT ./code_generation.pyg
+INPUT ./_minted-code_generation/3D3AC14A4DE372E3038EB2F3D656C381072D44258CB4D502B632394590FC7C86.pygtex
+INPUT ./_minted-code_generation/3D3AC14A4DE372E3038EB2F3D656C381072D44258CB4D502B632394590FC7C86.pygtex
+INPUT _minted-code_generation/3D3AC14A4DE372E3038EB2F3D656C381072D44258CB4D502B632394590FC7C86.pygtex
+OUTPUT code_generation.pyg
+INPUT ./_minted-code_generation/default.pygstyle
+INPUT ./_minted-code_generation/default.pygstyle
+INPUT _minted-code_generation/default.pygstyle
+INPUT ./code_generation.pyg
+INPUT ./_minted-code_generation/F423AC5DB52B3A16E4F008A8F6044C72495CFB347BF80D3B80DC4E67133AE62C.pygtex
+INPUT ./_minted-code_generation/F423AC5DB52B3A16E4F008A8F6044C72495CFB347BF80D3B80DC4E67133AE62C.pygtex
+INPUT _minted-code_generation/F423AC5DB52B3A16E4F008A8F6044C72495CFB347BF80D3B80DC4E67133AE62C.pygtex
+INPUT /home/bremdow/.miktex/texmfs/install/fonts/tfm/adobe/courier/pcrb8t.tfm
 OUTPUT code_generation.pdf
-INPUT C:\Users\Bremdows\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
-INPUT C:\Program Files\MiKTeX\fonts\enc\dvips\lm\lm-ec.enc
-INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\courier\pcrr8t.vf
-INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\courier\pcrr8r.tfm
-INPUT C:\Program Files\MiKTeX\fonts\enc\dvips\base\8r.enc
-INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\courier\pcrro8t.vf
-INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\courier\pcrro8r.tfm
+INPUT /home/bremdow/.miktex/texmfs/data/fonts/map/pdftex/pdftex.map
+INPUT /home/bremdow/.miktex/texmfs/install/fonts/enc/dvips/lm/lm-ec.enc
+INPUT /home/bremdow/.miktex/texmfs/install/fonts/vf/adobe/courier/pcrr8t.vf
+INPUT /home/bremdow/.miktex/texmfs/install/fonts/tfm/adobe/courier/pcrr8r.tfm
+INPUT /home/bremdow/.miktex/texmfs/install/fonts/enc/dvips/base/8r.enc
+INPUT /home/bremdow/.miktex/texmfs/install/fonts/vf/adobe/courier/pcrro8t.vf
+INPUT /home/bremdow/.miktex/texmfs/install/fonts/tfm/adobe/courier/pcrro8r.tfm
+INPUT /home/bremdow/.miktex/texmfs/install/fonts/vf/adobe/courier/pcrb8t.vf
+INPUT /home/bremdow/.miktex/texmfs/install/fonts/tfm/adobe/courier/pcrb8r.tfm
 INPUT code_generation.aux
-INPUT .\code_generation.pyg
-INPUT .\code_generation.pyg
-INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmbx12.pfb
-INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmbx12.pfb
-INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmr10.pfb
-INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmr10.pfb
-INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmr6.pfb
-INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmr6.pfb
-INPUT C:\Program Files\MiKTeX\fonts\type1\urw\courier\ucrr8a.pfb
-INPUT C:\Program Files\MiKTeX\fonts\type1\urw\courier\ucrr8a.pfb
-INPUT C:\Program Files\MiKTeX\fonts\type1\urw\courier\ucrro8a.pfb
-INPUT C:\Program Files\MiKTeX\fonts\type1\urw\courier\ucrro8a.pfb
+INPUT ./code_generation.pyg
+INPUT ./code_generation.pyg
+INPUT /home/bremdow/.miktex/texmfs/install/fonts/type1/public/lm/lmbx12.pfb
+INPUT /home/bremdow/.miktex/texmfs/install/fonts/type1/public/lm/lmbx12.pfb
+INPUT /home/bremdow/.miktex/texmfs/install/fonts/type1/public/lm/lmr10.pfb
+INPUT /home/bremdow/.miktex/texmfs/install/fonts/type1/public/lm/lmr10.pfb
+INPUT /home/bremdow/.miktex/texmfs/install/fonts/type1/public/lm/lmr6.pfb
+INPUT /home/bremdow/.miktex/texmfs/install/fonts/type1/public/lm/lmr6.pfb
+INPUT /home/bremdow/.miktex/texmfs/install/fonts/type1/urw/courier/ucrb8a.pfb
+INPUT /home/bremdow/.miktex/texmfs/install/fonts/type1/urw/courier/ucrb8a.pfb
+INPUT /home/bremdow/.miktex/texmfs/install/fonts/type1/urw/courier/ucrr8a.pfb
+INPUT /home/bremdow/.miktex/texmfs/install/fonts/type1/urw/courier/ucrr8a.pfb
+INPUT /home/bremdow/.miktex/texmfs/install/fonts/type1/urw/courier/ucrro8a.pfb
+INPUT /home/bremdow/.miktex/texmfs/install/fonts/type1/urw/courier/ucrro8a.pfb

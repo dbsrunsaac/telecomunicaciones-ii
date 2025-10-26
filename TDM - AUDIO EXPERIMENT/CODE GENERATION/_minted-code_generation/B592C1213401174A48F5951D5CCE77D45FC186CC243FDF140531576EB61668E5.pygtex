@@ -1,0 +1,13 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import}\PYG{+w}{ }\PYG{n+nn}{sys}
+\PYG{k+kn}{import}\PYG{+w}{ }\PYG{n+nn}{cv2} \PYG{c+c1}{\PYGZsh{} image management}
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{saludo}\PYG{p}{(}\PYG{n}{nombre}\PYG{p}{):}
+	\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}Bienvenido }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{nombre}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{!\PYGZdq{}}\PYG{p}{)}
+
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{operaciones}\PYG{p}{():}
+	\PYG{k}{return} \PYG{n}{saludo}\PYG{p}{()} \PYG{o}{+} \PYG{l+s+s2}{\PYGZdq{}ve a caminar\PYGZdq{}}
+
+\PYG{k}{if} \PYG{n+nv+vm}{\PYGZus{}\PYGZus{}name\PYGZus{}\PYGZus{}} \PYG{o}{==} \PYG{l+s+s2}{\PYGZdq{}\PYGZus{}\PYGZus{}main\PYGZus{}\PYGZus{}\PYGZdq{}}\PYG{p}{:}
+	\PYG{n}{saludo}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Mundo\PYGZdq{}}\PYG{p}{)}
+
+\end{Verbatim}

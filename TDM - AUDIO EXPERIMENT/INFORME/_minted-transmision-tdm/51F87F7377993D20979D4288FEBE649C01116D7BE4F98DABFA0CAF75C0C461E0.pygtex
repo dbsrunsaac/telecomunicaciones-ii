@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\PYG{c}{\PYGZpc{} Probando código}
+
+\PYG{o}{\PYGZbs{}}\PYG{n}{caption}\PYG{p}{\PYGZob{}}\PYG{n}{Generación}\PYG{+w}{ }\PYG{n}{de}\PYG{+w}{ }\PYG{n}{audio}\PYG{p}{\PYGZcb{}}
+\PYG{o}{\PYGZbs{}}\PYG{n}{label}\PYG{p}{\PYGZob{}}\PYG{n}{md}\PYG{p}{:}\PYG{n}{generacion}\PYG{o}{\PYGZhy{}}\PYG{n}{audio}\PYG{p}{\PYGZcb{}}
+\end{Verbatim}
