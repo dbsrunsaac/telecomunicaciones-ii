@@ -1,0 +1,11 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{	función para calcular la sería fibonnaci}
+\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{k}{def} \PYG{n+nf}{fib}\PYG{p}{(}\PYG{n}{n}\PYG{p}{):}
+\PYG{n}{a}\PYG{p}{,} \PYG{n}{b} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{1}
+\PYG{k}{while} \PYG{n}{a} \PYG{o}{\PYGZlt{}} \PYG{n}{n}\PYG{p}{:}
+	\PYG{k}{yield} \PYG{n}{a}
+	\PYG{n}{a}\PYG{p}{,} \PYG{n}{b} \PYG{o}{=} \PYG{n}{b}\PYG{p}{,} \PYG{n}{a} \PYG{o}{+} \PYG{n}{b}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{n+nb}{list}\PYG{p}{(}\PYG{n}{fib}\PYG{p}{(}\PYG{l+m+mi}{10}\PYG{p}{)))}
+\end{Verbatim}

@@ -73,7 +73,7 @@
 
 \usepackage{tikz}
 \usetikzlibrary{shapes.geometric, arrows}
-
+\usetikzlibrary{positioning}
 \usetikzlibrary{shapes.geometric, arrows}
 
 \tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=red!30]
@@ -195,15 +195,16 @@
 		\label{fig:input-signals-voice}
 	\end{figure}
 	
-	Además en esta misma se puede apreciar la duración y amplitud siendo la más característica la señal 3 que cuenta con un mayor rango de valores discretizados.
+	Además en esta misma se puede apreciar la duración y amplitud siendo la más característica la señal 3 que cuenta con un mayor rango de valores discretizados, viéndose reflejado este proceso en el bloque de código de código \ref{lst:generacion-audio} 
 	
 	\subsection{\textbf{Organización de archivos para la simulación}}
 	
-	El desarrollo de la simulación cuenta con diferentes etapas de multiplexación desde la lectura de las fuentes de información y los procesos inversos correspondientes estableciendo así varias operaciones repetitivas las cuales se pueden optimizar mediante el empleo de funciones estableciendo de esta forma una jerarquía de archivos dentro del esquema de emulación, considerando en el esquema \ref{fig:}
+	El desarrollo de la simulación cuenta con diferentes etapas de multiplexación desde la lectura de las fuentes de información y los procesos inversos correspondientes estableciendo así varias operaciones repetitivas las cuales se pueden optimizar mediante el empleo de funciones estableciendo de esta forma una jerarquía de archivos dentro del esquema de emulación, considerando en el esquema. 
 	
 	\begin{figure}[h]
 		\centering
 		\begin{tikzpicture}[
+			node distance=0.1cm and -2.5cm,
 			folder/.style={
 				rectangle,
 				minimum height=0.6cm,
@@ -226,25 +227,30 @@
 				font=\small\sffamily\bfseries,
 				align=left
 			}
-			]
+		]
 			% Raíz C:
-			\node[root] (croot) {C:.};
+			\node[root] (root) {TDM EXPERIMENT};
 			
-			% Primera columna - Carpetas principales
-			\node[folder, below=0.2cm of croot] (contacts) {Contacts};
-			\node[folder, below=0.1cm of contacts] (desktop) {Desktop};
-			\node[folder, below=0.1cm of desktop] (sistemas) {Sistemas};
-			\node[folder, below=0.1cm of sistemas] (documents) {Documents};
-			\node[folder, below=0.1cm of documents] (downloads) {Downloads};
-			\node[folder, below=0.1cm of downloads] (favorites) {Favorites};
-			\node[folder, below=0.1cm of favorites] (links) {Links};
-			\node[folder, below=0.1cm of links] (sitiosespana) {Sitios for España};
-			\node[folder, below=0.1cm of sitiosespana] (sitiosmicrosoft) {Sitios web de Microsoft};
-			\node[folder, below=0.1cm of sitiosmicrosoft] (sitiosmsn) {Sitios web de MSN};
-			\node[folder, below=0.1cm of sitiosmsn] (windowslive) {Windows Live};
+			% Subcarpeta functions
+			\node[root,   below right=of root] (funciones) {Funciones};
+			
+			\node[folder, below right= of funciones] (tdmm) {tdmm.m};
+			\node[folder, below=0.1cm of tdmm] (tdmux) {TDM\_mux.m};
+			\node[folder, below=0.1cm of tdmux] (demux) {demux.m};
+			\node[folder, below=0.1cm of demux] (demuxtdm) {demux\_TDM2.m};
+			
+			% Subcarpeta 
+			\node[root, below=3cm of funciones](data){Data};
+			
+			\node[folder, below right=of data](voz1){voz\_1.au};
+			\node[folder, below=0.1cm of voz1](voz2){voz\_2.au};
+			\node[folder, below=0.1cm of voz2](voz3){voz\_3.au};
+	
+	
+			% Texto de ejemplo
 			
 			% Segunda columna - Carpetas adicionales (al mismo nivel)
-			\node[folder, right=0.5cm of contacts] (links2) {Links};
+			\node[folder, right=0.5cm of funciones] (links2) {Links};
 			\node[folder, below=0.1cm of links2] (music) {Music};
 			\node[folder, below=0.1cm of music] (pictures) {Pictures};
 			\node[folder, below=0.1cm of pictures] (savedgames) {Saved Games};
@@ -272,9 +278,11 @@
 			\draw (savedgames.south) -- (searches.north);
 			\draw (searches.south) -- (videos.north);
 			
-			% Información adicional (como en el comando tree)
 			\node[below=0.5cm of windowslive, font=\scriptsize\itshape] (info1) {El número de serie del volumen es C40A-EB9C};
 			\node[below=0.1cm of info1, font=\scriptsize\itshape] (info2) {Estado de rutas de carpetas};
+			
+			% Información adicional (como en el comando tree)
+			
 			
 		\end{tikzpicture}
 		\caption{Estructura de carpetas de Windows - Comando \texttt{tree}}
@@ -346,14 +354,198 @@
 	\bibliography{biblio}
 	\section{Anexos}
 	
-	\begin{minted}[bgcolor=bg,
-				   linenos=false,
-				   style=friendly,
-				   label=Generación de audio]{matlab}
-		
-		% Probando código
-		
+	\begin{listing}
 		\caption{Generación de audio}
-		\label{md:generacion-audio}
-	\end{minted}
+		\label{lst:generacion-audio}
+		
+		\begin{minted}[bgcolor=bg,
+			linenos=false,
+			style=friendly,
+			label=Generación de audio]{matlab}
+			
+			% Probando código
+			clc;
+			state = 1;
+			% Solo realiza la grabación cuando el estado es 0
+			if state == 1 
+			clear;
+			% Objeto de grabacion
+			recObj = audiorecorder;
+			
+			% Iniciar una grabacion (solo es necesario ejecutarla una vez por audio)
+			disp("Iniciando con la grabacion");
+			recordblocking(recObj, 3);
+			end
+			
+			% Reproducir el audio grabado
+			play(recObj)
+			y = getaudiodata(recObj);
+			
+			save_voice = 1;
+			
+			if save_voice == 1
+			% guardar la señal de voz
+			fs = 8000;
+			audiowrite('voz_3.wav', y, fs);
+			end
+			
+		\end{minted}
+	\end{listing}
+	
+	\begin{listing}
+		\caption{Simulación TDM}
+		\label{lst:simulacion-tdm}
+		\begin{minted}[bgcolor=bg,
+					   linenos=false,
+					   style=friendly,
+					   label=Simulación TDM]{matlab}
+			%% Iniciando variables
+			close all;clear all; clc;
+			
+			% Acondicionamiento de la señales para la multiplexacion para N entradas
+			
+			N=3; % numero de canales (fuentes de informacion)
+			
+			for a=1:N
+			if(N<10)
+			eval(['[u' num2str(a) ' fs' num2str(a) ']=audioread(''voz_' num2str(a) '.au'');' ])
+			else
+			eval(['[u' num2str(a) ' fs' num2str(a) ']=audioread(''voz_' num2str(a) '.au'');' ])
+			end
+			end % loop end
+			
+			% periodo de muestreo
+			ts=1/fs1; 
+			% Duracion del slot
+			Ts = ts; % 
+			
+			ns = Ts/ts;
+			
+			% Escuchar las señales de voz
+			disp('Presiona enter para continuar');
+			pause
+			disp('Presiona entre para reproducir el primer archivo de audio');
+			sound(u1)
+			pause
+			disp('Presiona entre para reproducir el segundo archivo de audio');
+			sound(u2)
+			pause
+			disp('Presiona entre para reproducir el tercer archivo de audio');
+			sound(u3)
+			
+			%% Ajustes
+			% Determinar la longitud de las muestras
+			for s=1:N    
+				eval(['zz'  '=u' num2str(s) ';'])
+				eval(['l' num2str(s)  '=length(zz);'])
+			end
+			
+			mm=0;
+			
+			% Determinar la máxima longitud
+			for s=1:N    
+				if eval(['l' num2str(s)])>mm
+				mm=eval(['l' num2str(s) ';']);
+				end    
+			end
+			
+			m=mm;
+			
+			% Estimacion de tiempo
+			tm=ts*(m-1);
+			tx=0:ts:tm;
+			
+			% Igualando la longitud de los vectores
+			for s=1:N
+				if eval(['l' num2str(s) ' <m'])
+					eval(['ll' '=l' num2str(s) ';' ]);
+					eval(['zz' '=u' num2str(s) ';'  ])
+					eval(['uu' num2str(s)  '=zz;'])  ;
+					eval(['uu' num2str(s)  '(ll+1:m)=0;']);
+				else
+					eval(['zz' '=u' num2str(s) ';']);
+					eval(['uu' num2str(s)  '=zz;']) ;
+				end
+			end
+			
+			%% Multiplexando (union en una matriz)
+			for b=1:N
+			eval(['u(' num2str(b) ',:)=uu' num2str(b) ';' ])
+			end % loop end
+			
+			
+			% Graficando las senales
+			figure(1)
+			
+			for i=1:N
+				subplot(N,1,i)
+				stairs(tx,u(i,:));
+				xlabel('Tiempo [s]');
+				ylabel('Amplitud');  
+				if i==1
+				title('Senal de voz')
+			end
+			end
+			
+			%% Procesamiento
+			% Multiplexando la senal
+			
+			um=tdmm(u,ns);
+			% Agregando AWGN (ruido gaussiano aditivo aleatorio)
+			umn=awgn(um,25);
+			
+			% Plotting: TDM signal with and w/o noise
+			figure(2)
+			subplot(2,1,1)
+			
+			stairs(tx,um);
+			xlabel('Tiempo [s]');
+			ylabel('Amplitud');
+			title('Senal TDM')
+			
+			subplot(2,1,2)
+			stairs(tx,umn);
+			xlabel('Tiempo [s]');
+			ylabel('Amplitud');
+			title('Senal + ruido')
+			
+			
+			disp('Presiona enter para escuchar la señal multiplexada: ');
+			pause
+			sound(um)
+			
+			% Procesando (operacion inversa) - Demultiplexando
+			% um -> [Demux] -> ud
+			ud=demux(um,ns,N);
+			
+			% Dividiendo las senales demultiplexadas
+			for b=1:N
+			eval(['ux' num2str(b) '=ud(' num2str(b) ',:);' ]);
+			end
+			
+			% Reproduciendo las senales demultiplexadas 
+			display('Presiona enter para escuchar las senales demultiplexadas')
+			pause
+			for b=1:N
+			
+			eval(['sound(ux' num2str(b) ');' ])
+			display('Presionar enter para reproducir la senal demultiplexada')
+			pause
+			
+			end % loop end
+			
+			% Graficando las senales demultiplexadas
+			figure(3)
+			for a=1:N
+				subplot(N,1,a)
+				stairs(tx,ud(a,:));
+				xlabel('Tiempo [s]');
+				ylabel('Amplitud'); 
+				if a==1
+				title('Senal Demultiplexada')
+				end
+			end
+			
+		\end{minted}
+	\end{listing}
 \end{document}
