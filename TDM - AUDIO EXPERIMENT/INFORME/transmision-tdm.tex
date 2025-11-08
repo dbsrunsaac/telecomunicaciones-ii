@@ -118,7 +118,7 @@
 	
 	\maketitle
 	\begin{abstract}
-		
+		Con la creciente demanda de recursos en espectro y físicos para la transmisión de datos explorar técnicas que permitan mitigar este creciente cambio es de vital importancia para la sostenibilidad en las comunicaciones y la implementación de sistemas de orden superior que integren en el mismo un tráfico de datos elevados sin que esto considere para su implementación un exceso uso de recursos. Una de las técnicas de optimización se centra en multiplexar las diferentes fuentes de información en intervalos de tiempo especifico para transmitir un bloque o slot de datos para luego en la etapa del receptor aplicar el proceso inverso (demux) para la recuperación de las señales.
 	\end{abstract}
 	\begin{IEEEkeywords}
 		Transmisión de datos, Ancho de banda, PCM, TDM, sincronización de canal, Multiplexación de información
@@ -149,7 +149,7 @@
 	
 	La optimización de un canal para el transmisión de información requiere ciertos parámetros de control entre los cuales se puede destacar por su importancia la señal de conmutación o de sincronización la cual es la encargada de generar los bloques de información o slots conformados a partir de las diferentes fuentes que conforman el bloque general TDM que consiste principalmente en la generación de paquetes de información espaciados temporalmente y reconstruidos en función al mismo principio de división en tiempo.
 	
-	Por lo tanto al requerirse en ambas etapa (envío y recepción) es necesario considerar que la señal de sincronización que actúa al mismo tiempo de frecuencia de muestreo (en caso de contar con señales analógicas) debe ser la misma en ambos extremos de un enlace de comunicación digital por lo tanto para su despliegue se desarrollando 2 formas de poder \textbf{sincronizar} este recurso tan relevante como se menciona en \cite{couch2012sistemas}
+	Por lo tanto al requerirse en ambas etapa (envío y recepción) es necesario considerar que la señal de sincronización que actúa al mismo tiempo de frecuencia de muestreo (en caso de contar con señales analógicas) debe ser la misma en ambos extremos de un enlace de comunicación digital por lo tanto para su despliegue se desarrollando 2 formas de poder \textbf{sincronizar} este recurso tan relevante como se menciona en \cite{couch2012sistemas} y se ejemplifica de forma gráfica en la figura \ref{fig:sincronizacion-tdm}
 	
 	\begin{enumerate}
 		\item Sincronización mediante canal externo
@@ -157,6 +157,13 @@
 	\end{enumerate}
 	
 	Siendo para el presente caso el empleo del primer método, en la cual se hace de un canal externo para sincronizar las señales de conmutación en ambos extremos del enlace, permitiendo recuperar de forma efectiva las señales multiplexadas en el tiempo requiriendo sin embargo una canal adicional para sincronizar correctamente la frecuencia de muestreo desde el emisor en el receptor menguando el propósito de una comunicación TDM que busca reducir el uso de canales para la transmisión de información ubicándose en las aplicaciones práctica el empleo del segundo método en la cual se hace uso de una cantidad de bits en la parte final de una trama para la sincronización de la señales.
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.5\textwidth]{media/sincronizacion-tdm}
+		\caption{Sincronización en la señal de multiplexación en una TDM}
+		\label{fig:sincronizacion-tdm}
+	\end{figure}
 	
 	\section{\textbf{Simulación}}
 	
@@ -180,7 +187,15 @@
 	
 	Cabe mencionar que el presente experimento al tratarse de una simulación a nivel digital cualquier lenguaje de programación es apto para su desarrollo, sin embargo lenguajes como Python o MATLAB brinda cierta facilidad con herramientas integradas para la generación de interfaces gráficas o figuras para mostrar los resultados así como librerías que facilitan el grabado y reproducción de audio en tiempo real.
 	
-	Dentro de las virtudes observadas para cada lenguaje de programación listado se decidió finalmente por MATLAB por su integración de la librería \textit{audiorecord} y su fortaleza para la manipulación de matrices fila, columna o multidimensionales otorgando una gran ventaja adicional gracias a su IDE o entorno de programación que permite administrar las variables creadas así como sus dimensiones.
+	Dentro de las virtudes observadas para cada lenguaje de programación listado se decidió finalmente por MATLAB por su integración de la librería \textit{audiorecord} y su fortaleza para la manipulación de matrices fila, columna o multidimensionales otorgando una gran ventaja adicional gracias a su IDE (figura \ref{fig:gui-matlab}) o entorno de programación que permite administrar las variables creadas así como sus dimensiones
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.5\textwidth]{media/gui-matlab}
+		\caption{Interfaz gráfica de MATLAB}
+		\label{fig:gui-matlab}
+	\end{figure}
+	
 	
 	\subsection{\textbf{Generación de las señales}}
 	
@@ -199,12 +214,12 @@
 	
 	\subsection{\textbf{Organización de archivos para la simulación}}
 	
-	El desarrollo de la simulación cuenta con diferentes etapas de multiplexación desde la lectura de las fuentes de información y los procesos inversos correspondientes estableciendo así varias operaciones repetitivas las cuales se pueden optimizar mediante el empleo de funciones estableciendo de esta forma una jerarquía de archivos dentro del esquema de emulación, considerando en el esquema. 
+	El desarrollo de la simulación cuenta con diferentes etapas de multiplexación desde la lectura de las fuentes de información y los procesos inversos correspondientes estableciendo así varias operaciones repetitivas las cuales se pueden optimizar mediante el empleo de funciones estableciendo de esta forma una jerarquía de archivos dentro del esquema de emulación, considerando en el esquema mostrado en la figura \ref{fig:jerarquia-archivos}
 	
 	\begin{figure}[h]
 		\centering
 		\begin{tikzpicture}[
-			node distance=0.1cm and -2.5cm,
+			node distance=0.1cm and -3cm,
 			folder/.style={
 				rectangle,
 				minimum height=0.6cm,
@@ -229,7 +244,7 @@
 			}
 		]
 			% Raíz C:
-			\node[root] (root) {TDM EXPERIMENT};
+			\node[root] (root) {SIMULACION TDM};
 			
 			% Subcarpeta functions
 			\node[root,   below right=of root] (funciones) {Funciones};
@@ -239,64 +254,51 @@
 			\node[folder, below=0.1cm of tdmux] (demux) {demux.m};
 			\node[folder, below=0.1cm of demux] (demuxtdm) {demux\_TDM2.m};
 			
-			% Subcarpeta 
-			\node[root, below=3cm of funciones](data){Data};
+			% Subcarpeta 1
+			\node[root, below=3cm of funciones](data){Señales de voz};
 			
 			\node[folder, below right=of data](voz1){voz\_1.au};
 			\node[folder, below=0.1cm of voz1](voz2){voz\_2.au};
 			\node[folder, below=0.1cm of voz2](voz3){voz\_3.au};
-	
-	
-			% Texto de ejemplo
 			
-			% Segunda columna - Carpetas adicionales (al mismo nivel)
-			\node[folder, right=0.5cm of funciones] (links2) {Links};
-			\node[folder, below=0.1cm of links2] (music) {Music};
-			\node[folder, below=0.1cm of music] (pictures) {Pictures};
-			\node[folder, below=0.1cm of pictures] (savedgames) {Saved Games};
-			\node[folder, below=0.1cm of savedgames] (searches) {Searches};
-			\node[folder, below=0.1cm of searches] (videos) {Videos};
+			% Subcarpeta 2
+			\node[root, below=2.4cm of data](mainfiles){Archivos ejecución};
 			
-			% Líneas conectivas desde la raíz
-			\draw (croot.south) -- (contacts.north);
-			\draw (contacts.south) -- (desktop.north);
-			\draw (desktop.south) -- (sistemas.north);
-			\draw (sistemas.south) -- (documents.north);
-			\draw (documents.south) -- (downloads.north);
-			\draw (downloads.south) -- (favorites.north);
-			\draw (favorites.south) -- (links.north);
-			\draw (links.south) -- (sitiosespana.north);
-			\draw (sitiosespana.south) -- (sitiosmicrosoft.north);
-			\draw (sitiosmicrosoft.south) -- (sitiosmsn.north);
-			\draw (sitiosmsn.south) -- (windowslive.north);
+			\node[folder, below right=of mainfiles] (tdm) {TDM.m};
+			\node[folder, below=0.1cm of tdm] (tdmtest){signal\_TDM\_test.m};
 			
-			% Líneas para la segunda columna (conectadas también a la raíz)
-			\draw (croot.east) -- ++(0.5,0) |- (links2.west);
-			\draw (links2.south) -- (music.north);
-			\draw (music.south) -- (pictures.north);
-			\draw (pictures.south) -- (savedgames.north);
-			\draw (savedgames.south) -- (searches.north);
-			\draw (searches.south) -- (videos.north);
+			% Flechas (Primer nivel)
+			\draw[->] (root.west) |- (funciones.west);
+			\draw[->] (root.west) |- (mainfiles.west);
+			\draw[->] (root.west) |- (data.west); 
 			
-			\node[below=0.5cm of windowslive, font=\scriptsize\itshape] (info1) {El número de serie del volumen es C40A-EB9C};
-			\node[below=0.1cm of info1, font=\scriptsize\itshape] (info2) {Estado de rutas de carpetas};
+			% Flechas (Segundo nivel)
 			
-			% Información adicional (como en el comando tree)
+			\draw [->] (funciones.west) |- (tdmm.west);
+			\draw [->] (funciones.west) |- (tdmux.west);
+			\draw [->] (funciones.west) |- (demux.west);
+			\draw [->] (funciones.west) |- (demuxtdm.west);
 			
+			\draw[->] (data.west) |- (voz1.west);
+			\draw[->] (data.west) |- (voz2.west);
+			\draw[->] (data.west) |- (voz3.west);
 			
+			\draw [->] (mainfiles.west) |- (tdm.west);
+			\draw [->] (mainfiles.west) |- (tdmtest.west);
+
 		\end{tikzpicture}
-		\caption{Estructura de carpetas de Windows - Comando \texttt{tree}}
-		\label{fig:windows_tree_structure}
+		\caption{Jerarquía de archivos - Simulación TDM}
+		\label{fig:jerarquia-archivos}
 	\end{figure}
+	\newpage
 	
 	El cual representa la estructura de trabajo para facilitar la comprensión del mismo para el llamado de funciones.
 	
 	\subsection{\textbf{Multiplexación señal}}
 	
-	
 	\begin{figure}[htbp]
 		\centering
-		\begin{tikzpicture}[node distance=1.2cm]
+		\begin{tikzpicture}[node distance=0.5cm]
 			
 			% Nodos
 			\node[startstop] (start) {Inicio: Estado de Multiplexación};
@@ -329,6 +331,7 @@
 	\end{figure}
 	
 	
+	
 	\begin{figure}[h]
 		\centering
 		\includegraphics[width=0.5\textwidth]{media/tmd-signal-and-noise}
@@ -343,12 +346,9 @@
 		\label{fig:demux-tdm-signal-noise}
 	\end{figure}
 	
-	
-	
 	\section{Resultados}
 	
 	% Resumen de lo obtenido para cada etapa
-	
 	% Código general aplicado y capturas de los archivos empleados para la simulación
 	\bibliographystyle{IEEEtran}
 	\bibliography{biblio}

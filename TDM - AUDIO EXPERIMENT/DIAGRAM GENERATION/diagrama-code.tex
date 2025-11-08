@@ -1,7 +1,7 @@
 \documentclass[10pt,a4paper]{article}
 \usepackage{tikz}
 \usetikzlibrary{positioning}
-\usepackage[spanish]{babel}
+\usetikzlibrary{matrix, arrows.meta}
 
 \begin{document}
 	
@@ -85,4 +85,68 @@
 		\label{fig:windows_tree_structure}
 	\end{figure}
 	
-\end{document}
+	\section{\textbf{Arrows}}
+	
+	\begin{figure}
+		\begin{tikzpicture}[node distance=2.5cm]
+			\node[draw] (A) {A};
+			
+			\node[draw, right=of A] (B) {B};
+			\node[draw, below=of A] (C) {C};
+			
+			\draw[->, bend left=30] (A) to (B);        % curva suave
+			\draw[->, bend right=45] (A) to (C);       % hacia abajo curvado
+			\draw[->, out=0, in=270] (C) to (B);       % control manual
+		\end{tikzpicture}
+	\end{figure}
+	
+	
+	
+	\begin{figure}
+		\begin{tikzpicture}[>=Stealth]
+			\matrix[matrix of nodes, nodes={draw, minimum width=2cm}, row sep=10mm, column sep=10mm] (m) {
+				A & B \\
+				C & D \\
+			};
+			\draw[->] (m-1-1) -- (m-1-2);
+			\draw[->] (m-1-1) -- (m-2-1);
+			\draw[->] (m-2-1) -- (m-2-2);
+		\end{tikzpicture}
+	\end{figure}
+	
+	\section{Posiciones relativas}
+	\begin{figure}
+		\begin{tikzpicture}
+			\draw[->] (0,0) -- ++(2,0);      % desde (0,0) hasta +2 en x
+			\draw[->] (2,0) -- ++(0,2);      % desde el nuevo punto
+		\end{tikzpicture}
+	\end{figure}
+	
+	\section{Rutas Ortogonales}
+	\begin{figure}
+		\begin{tikzpicture}[node distance=2cm]
+			\node[draw] (A) {A};
+			\node[draw, below=of A] (B) {B};
+			\node[draw, right=of B] (C) {C};
+			
+			\draw[->] (A) |- (B);   % baja y luego conecta
+			\draw[->] (A) -| (C);   % primero derecha, luego baja
+		\end{tikzpicture}
+	\end{figure}
+	
+	\section{Conexion entre puntos}
+	
+	\begin{figure}
+		\begin{tikzpicture}
+			% Coordenadas sueltas
+			\coordinate (A) at (0,0);
+			\coordinate (B) at (3,-2);
+			
+			% Flecha ortogonal entre coordenadas personalizadas
+			\draw[->, thick, teal] (A) |- (B);
+			\draw[fill] (A) circle (2pt) node[above left]{A};
+			\draw[fill] (B) circle (2pt) node[below right]{B};
+		\end{tikzpicture}
+	\end{figure}
+	
+	\end{document}

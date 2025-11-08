@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex transmision-tdm"] 1762122051.1258 "transmision-tdm.aux" "transmision-tdm.bbl" "transmision-tdm" 1762123390.15996 0
+["bibtex transmision-tdm"] 1762137686.79206 "transmision-tdm.aux" "transmision-tdm.bbl" "transmision-tdm" 1762137910.7343 0
   "./biblio.bib" 1761670401 647 c305502b96b91ab8078af617513fad92 ""
   "C:/Users/Bremdow/AppData/Local/Programs/MiKTeX/bibtex/bst/ieeetran/IEEEtran.bst" 1440622569 57748 7c8250ecf02814ce6ddc0cdbb63df1dd ""
-  "transmision-tdm.aux" 1762123388 4185 901714ab02a02a5b53dc43d76e91307c "pdflatex"
+  "transmision-tdm.aux" 1762137909 4696 4944680dac8f60ae29555454c81eb9c3 "pdflatex"
   (generated)
   "transmision-tdm.bbl"
   "transmision-tdm.blg"
   (rewritten before read)
-["pdflatex"] 1762123385.69019 "transmision-tdm.tex" "transmision-tdm.pdf" "transmision-tdm" 1762123390.1608 0
-  "C:/Users/Bremdow/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1762122047 82595 46ccd9dbe7bc4f7530bad1f7a67c295c ""
+["pdflatex"] 1762137906.02955 "transmision-tdm.tex" "transmision-tdm.pdf" "transmision-tdm" 1762137910.73499 0
+  "C:/Users/Bremdow/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1762132895 82595 46ccd9dbe7bc4f7530bad1f7a67c295c ""
   "C:/Users/Bremdow/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1762121891 13322876 e6043804c387fd884881a5384d730608 ""
   "C:/Users/Bremdow/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc" 1458473887 4993 80dc9bab7f31fb78a000ccfed0e27cab ""
   "C:/Users/Bremdow/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/courier/pcrb7t.tfm" 1136765053 960 4ab65358b8406f30ef5496c8c096d22b ""
@@ -218,13 +218,15 @@
   "_minted-transmision-tdm/8E8EA1404212A917452B3DE6AE3562DE1131EBF5C34D1055BF0C1EB23F4A9828.pygtex" 1762122089 10654 6e72915413ff4d58e24d13daf7c8dfc0 ""
   "_minted-transmision-tdm/friendly.pygstyle" 1761670401 6615 8866be9ec5e5fb1e091922e713e48e4d ""
   "media/demux-tdm-signal-noise.png" 1761670401 28926 8e2d1f608c36785b4a0cf864a533ab33 ""
+  "media/gui-matlab.png" 1762137632 159247 0275f3631d1026ebef7ce935ccb4aea9 ""
   "media/input-signals-voice.png" 1761670401 28532 4e939ff9c1b89d9293853647e9e66a11 ""
   "media/pcm-blocks.png" 1761670401 80670 28e07b64842117699f74915973e50f62 ""
+  "media/sincronizacion-tdm.png" 1762137066 9383 4a00902c9a8956402c0189bb2532014a ""
   "media/tmd-signal-and-noise.png" 1761670401 32652 c94d9cd4da588a66ad16e3f49488d4f8 ""
-  "transmision-tdm.aux" 1762123388 4185 901714ab02a02a5b53dc43d76e91307c "pdflatex"
-  "transmision-tdm.bbl" 1762122051 1338 a3bd804d85d642e3afa9a3bc9fd99553 "bibtex transmision-tdm"
-  "transmision-tdm.out" 1762123388 1543 bdfbc5292625ac62017e67d499ced8ca "pdflatex"
-  "transmision-tdm.tex" 1762123384 20008 0544ccf1cab093ff160c339942d7c257 ""
+  "transmision-tdm.aux" 1762137909 4696 4944680dac8f60ae29555454c81eb9c3 "pdflatex"
+  "transmision-tdm.bbl" 1762137687 1338 a3bd804d85d642e3afa9a3bc9fd99553 "bibtex transmision-tdm"
+  "transmision-tdm.out" 1762137909 1543 5a31e3d7e676d74f1ae22c4b21169185 "pdflatex"
+  "transmision-tdm.tex" 1762137905 22043 b53d2eb01138f28bcf4f69df8245dadb ""
   (generated)
   "transmision-tdm.aux"
   "transmision-tdm.log"
