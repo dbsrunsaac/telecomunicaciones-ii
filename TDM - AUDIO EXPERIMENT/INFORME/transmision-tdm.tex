@@ -268,7 +268,7 @@
 			\node[folder, below=0.1cm of voz2](voz3){voz\_3.au};
 			
 			% Subcarpeta 2
-			\node[root, below=2.4cm of data](mainfiles){Archivos ejecución};
+			\node[root, below=2.4cm of data](mainfiles){Archivos principales};
 			
 			\node[folder, below right=of mainfiles] (tdm) {TDM.m};
 			\node[folder, below=0.1cm of tdm] (tdmtest){signal\_TDM\_test.m};
@@ -360,13 +360,24 @@
 		\label{fig:demux-tdm-signal-noise}
 	\end{figure}
 	
+	\section{Conclusiones}
+	
+	\begin{itemize}
+		\item Durante la simulación se pudo generar y transmitir diferentes fuentes de información partiendo desde su digitalización pasando por el proceso de multiplexación en el tiempo y/o TDM para finalizar con el proceso inverso para recuperar las señales analizando dentro de este proceso el agregado de ruido aleatorio, siendo poco perceptible o con poca influencia al momento de reproducir el audio grabado.
+		\item Además también en la ejecución del algoritmo propuesto se pudo validar la definición teórica mediante la puesta en práctica del modelo TDM considerando tres fuentes de audio haciendo uso para esto el software de MATLAB y una sincronización de canal externo para cada etapa del proceso, expandiendo de esta forma el análisis mediante su aplicación directa.
+		
+		\item Finalmente como consideración en la TDM se manipularon diferentes etapas de trabajo a nivel de software, sin embargo el experimento provisto no es extendible y fue ejecutado a nivel de implementación y para lo cual se puede hacer uso de micro controlador como Arduino siendo un uso de aplicación o ejemplo el envío o transmisión de medidas a partir de varios sensores como se menciona en \cite{Rajkumar2025_TDMArduino} y el cual se puede usar de guía para otra posible aplicación.
+	\end{itemize}
+	
 	% Resumen de lo obtenido para cada etapa
 	% Código general aplicado y capturas de los archivos empleados para la simulación
 	\bibliographystyle{IEEEtran}
 	\bibliography{biblio}
+	
+	\newpage
 	\section{Anexos}
 	
-	\begin{listing}
+	\begin{listing}[h]
 		\caption{Generación de audio}
 		\label{lst:generacion-audio}
 		
@@ -375,7 +386,6 @@
 			style=friendly,
 			label=Generación de audio]{matlab}
 			
-			% Probando código
 			clc;
 			state = 1;
 			% Solo realiza la grabación cuando el estado es 0
@@ -404,20 +414,16 @@
 		\end{minted}
 	\end{listing}
 	
-	\begin{listing}
+	\begin{listing}[h]
 		\caption{Simulación TDM}
 		\label{lst:simulacion-tdm}
 		\begin{minted}[bgcolor=bg,
 					   linenos=false,
 					   style=friendly,
-					   label=Simulación TDM]{matlab}
+					   label=Simulación TDM - I]{matlab}
 			%% Iniciando variables
 			close all;clear all; clc;
-			
-			% Acondicionamiento de la señales para la multiplexacion para N entradas
-			
-			N=3; % numero de canales (fuentes de informacion)
-			
+			N=3;
 			for a=1:N
 			if(N<10)
 			eval(['[u' num2str(a) ' fs' num2str(a) ']=audioread(''voz_' num2str(a) '.au'');' ])
@@ -427,38 +433,47 @@
 			end % loop end
 			
 			% periodo de muestreo
-			ts=1/fs1; 
+			ts=1/fs1;
+		\end{minted}
+	\end{listing}
+	
+	\begin{listing}[h]
+		\begin{minted}[
+				bgcolor=bg,
+				linenos=false,
+				style=friendly,
+				label=Simulación TDM - II]{matlab}
+				
+			 
 			% Duracion del slot
 			Ts = ts; % 
 			
-			ns = Ts/ts;
-			
+			ns = Ts/ts;	
 			% Escuchar las señales de voz
 			disp('Presiona enter para continuar');
 			pause
-			disp('Presiona entre para reproducir el primer archivo de audio');
+			disp('Press enter to play the firsts audio');
 			sound(u1)
 			pause
-			disp('Presiona entre para reproducir el segundo archivo de audio');
-			sound(u2)
+			disp('Press enter to play the second audio');
 			pause
-			disp('Presiona entre para reproducir el tercer archivo de audio');
+			disp('Press enter to play the third audio');
 			sound(u3)
 			
 			%% Ajustes
 			% Determinar la longitud de las muestras
 			for s=1:N    
-				eval(['zz'  '=u' num2str(s) ';'])
-				eval(['l' num2str(s)  '=length(zz);'])
+			eval(['zz'  '=u' num2str(s) ';'])
+			eval(['l' num2str(s)  '=length(zz);'])
 			end
 			
 			mm=0;
 			
 			% Determinar la máxima longitud
 			for s=1:N    
-				if eval(['l' num2str(s)])>mm
-				mm=eval(['l' num2str(s) ';']);
-				end    
+			if eval(['l' num2str(s)])>mm
+			mm=eval(['l' num2str(s) ';']);
+			end    
 			end
 			
 			m=mm;
@@ -469,33 +484,42 @@
 			
 			% Igualando la longitud de los vectores
 			for s=1:N
-				if eval(['l' num2str(s) ' <m'])
-					eval(['ll' '=l' num2str(s) ';' ]);
-					eval(['zz' '=u' num2str(s) ';'  ])
-					eval(['uu' num2str(s)  '=zz;'])  ;
-					eval(['uu' num2str(s)  '(ll+1:m)=0;']);
+			if eval(['l' num2str(s) ' <m'])
+				eval(['ll' '=l' num2str(s) ';' ]);
+				eval(['zz' '=u' num2str(s) ';'  ])
+				eval(['uu' num2str(s)  '=zz;'])  ;
+				eval(['uu' num2str(s)  '(ll+1:m)=0;']);
 				else
-					eval(['zz' '=u' num2str(s) ';']);
-					eval(['uu' num2str(s)  '=zz;']) ;
-				end
+				eval(['zz' '=u' num2str(s) ';']);
+				eval(['uu' num2str(s)  '=zz;']) ;
 			end
+			end
+			
+		\end{minted}
+	\end{listing}
+	
+	\begin{listing}[h]
+		\begin{minted}[
+			bgcolor=bg,
+			linenos=false,
+			style=friendly,
+			label=Simulación TDM III]{matlab}
 			
 			%% Multiplexando (union en una matriz)
 			for b=1:N
 			eval(['u(' num2str(b) ',:)=uu' num2str(b) ';' ])
-			end % loop end
-			
+			end
 			
 			% Graficando las senales
 			figure(1)
 			
 			for i=1:N
-				subplot(N,1,i)
-				stairs(tx,u(i,:));
-				xlabel('Tiempo [s]');
-				ylabel('Amplitud');  
-				if i==1
-				title('Senal de voz')
+			subplot(N,1,i)
+			stairs(tx,u(i,:));
+			xlabel('Tiempo [s]');
+			ylabel('Amplitud');  
+			if i==1
+			title('Senal de voz')
 			end
 			end
 			
@@ -521,7 +545,6 @@
 			ylabel('Amplitud');
 			title('Senal + ruido')
 			
-			
 			disp('Presiona enter para escuchar la señal multiplexada: ');
 			pause
 			sound(um)
@@ -534,6 +557,16 @@
 			for b=1:N
 			eval(['ux' num2str(b) '=ud(' num2str(b) ',:);' ]);
 			end
+		\end{minted}
+	\end{listing}
+	\newpage
+	
+	\begin{listing}[h]
+		\begin{minted}[
+			bgcolor=bg,
+			linenos=false,
+			style=friendly,
+			label=Simulación TDM - IV]{matlab}
 			
 			% Reproduciendo las senales demultiplexadas 
 			display('Presiona enter para escuchar las senales demultiplexadas')
@@ -554,7 +587,7 @@
 				xlabel('Tiempo [s]');
 				ylabel('Amplitud'); 
 				if a==1
-				title('Senal Demultiplexada')
+					title('Senal Demultiplexada')
 				end
 			end
 		\end{minted}

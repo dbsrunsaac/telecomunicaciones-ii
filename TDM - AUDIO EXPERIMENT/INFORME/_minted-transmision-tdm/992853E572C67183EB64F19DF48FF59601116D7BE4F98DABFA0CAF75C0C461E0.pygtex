@@ -1,6 +1,5 @@
 \begin{Verbatim}[commandchars=\\\{\}]
 
-\PYG{c}{\PYGZpc{} Probando código}
 \PYG{n+nb}{clc}\PYG{p}{;}
 \PYG{n}{state}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{;}
 \PYG{c}{\PYGZpc{} Solo realiza la grabación cuando el estado es 0}
