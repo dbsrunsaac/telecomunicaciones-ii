@@ -47,6 +47,12 @@
 % minted for use pygmetize
 \usepackage{minted2}
 \usepackage{geometry}            % Márgenes
+\geometry{
+	top=1.3cm,
+	bottom=1.3cm,
+	left=2.5cm,
+	right=2.5cm
+}
 \usepackage{courier}			 % font type
 
 % Opciones globales (opcional) minted
@@ -296,6 +302,12 @@
 	
 	\subsection{\textbf{Multiplexación señal}}
 	
+	Para el proceso de multiplexación el flujo del algoritmo a considerar a nivel de secuencia de pasos se describe en el diagrama \ref{fig:flujo-multiplexacion} utilizando para cada bloque los archivos de función en MATLAB para la ejecución de cada uno.
+	
+	En el TDM la multiplexación de la señal se considera como el elemento crítico para su implementación y que consiste de manera técnica en la fusión de las diferentes fuentes asignando un intervalo de tiempo para cada una de ellas en función a una señal de conmutación y sincronización mencionadas previamente.
+	
+	% Además se considera dentro de la ejecución de la simulación la reproducción del audio durante cada etapa para poder destacar de forma más notoria los cambios y modificación en las señales para cada etapa.
+	
 	\begin{figure}[htbp]
 		\centering
 		\begin{tikzpicture}[node distance=0.5cm]
@@ -327,16 +339,18 @@
 			
 		\end{tikzpicture}
 		\caption{Diagrama de flujo del estado de Multiplexación de la señal.}
-		\label{fig:flujo_multiplexacion}
+		\label{fig:flujo-multiplexacion}
 	\end{figure}
 	
+	\section{Resultados}
 	
+	Una vez realizado el proceso de multiplexación para las diferentes fuentes mostradas en la figura \ref{fig:input-signals-voice} como salida de la simulación realizada se observan una figura intermedia y otra de salida como resultado siendo \ref{fig:tdm-signal-and-noise} las señales de audio considerando el agregado de \textbf{ruido AWGN} con la finalidad de ver los efectos de este fenómeno no deseado en este tipo de multiplexación y el cual se muestra en la figura \ref{fig:demux-tdm-signal-noise} la señal de salida resultante demultiplexada al aplicar el proceso inverso para la recuperación de la señal.
 	
 	\begin{figure}[h]
 		\centering
 		\includegraphics[width=0.5\textwidth]{media/tmd-signal-and-noise}
 		\caption{Señal TDM - Señal TDM con ruido (AWGN agregado)}
-		\label{fig:tmd-signal-and-noise}
+		\label{fig:tdm-signal-and-noise}
 	\end{figure}
 	
 	\begin{figure}[h]
@@ -345,8 +359,6 @@
 		\caption{Señal TDM + Noise demultiplexada}
 		\label{fig:demux-tdm-signal-noise}
 	\end{figure}
-	
-	\section{Resultados}
 	
 	% Resumen de lo obtenido para cada etapa
 	% Código general aplicado y capturas de los archivos empleados para la simulación
@@ -545,7 +557,6 @@
 				title('Senal Demultiplexada')
 				end
 			end
-			
 		\end{minted}
 	\end{listing}
 \end{document}
