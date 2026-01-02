@@ -1,0 +1,17 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\PYG{n}{signal\PYGZus{}power}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{mean}\PYG{p}{(}\PYG{n+nb}{abs}\PYG{p}{(}\PYG{n}{tx\PYGZus{}symbols}\PYG{p}{)}\PYG{o}{.\PYGZca{}}\PYG{l+m+mi}{2}\PYG{p}{);}
+
+\PYG{n}{SNR\PYGZus{}linear}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m+mi}{10}\PYGZca{}\PYG{p}{(}\PYG{n}{SNR\PYGZus{}dB}\PYG{o}{/}\PYG{l+m+mi}{10}\PYG{p}{);}
+
+\PYG{n}{noise\PYGZus{}power}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{signal\PYGZus{}power}\PYG{+w}{ }\PYG{o}{/}\PYG{+w}{ }\PYG{n}{SNR\PYGZus{}linear}\PYG{p}{;}
+
+\PYG{n}{noise\PYGZus{}symbols}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{sqrt}\PYG{p}{(}\PYG{n}{noise\PYGZus{}power}\PYG{o}{/}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{k}{...}
+\PYG{p}{(}\PYG{n+nb}{randn}\PYG{p}{(}\PYG{n+nb}{size}\PYG{p}{(}\PYG{n}{tx\PYGZus{}symbols}\PYG{p}{))}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }1\PYG{n+nb}{i}\PYG{o}{*}\PYG{n+nb}{randn}\PYG{p}{(}\PYG{n+nb}{size}\PYG{p}{(}\PYG{n}{tx\PYGZus{}symbols}\PYG{p}{)));}
+
+\PYG{n}{rx\PYGZus{}symbols}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{tx\PYGZus{}symbols}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{n}{noise\PYGZus{}symbols}\PYG{p}{;}
+
+\PYG{n}{noise\PYGZus{}signal}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{sqrt}\PYG{p}{(}\PYG{n}{noise\PYGZus{}power}\PYG{o}{/}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n+nb}{randn}\PYG{p}{(}\PYG{n+nb}{size}\PYG{p}{(}\PYG{n}{modulated\PYGZus{}signal}\PYG{p}{));}
+\PYG{n}{noisy\PYGZus{}signal}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{modulated\PYGZus{}signal}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{n}{noise\PYGZus{}signal}\PYG{p}{;}
+
+\end{Verbatim}

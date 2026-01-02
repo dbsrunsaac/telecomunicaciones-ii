@@ -1,0 +1,14 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\PYG{c}{\PYGZpc{}\PYGZpc{} Parámetros de la simulación}
+\PYG{n}{order}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m+mi}{32}\PYG{p}{;}
+\PYG{n}{symorder}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+s}{\PYGZsq{}gray\PYGZsq{}}\PYG{p}{;}
+
+\PYG{n}{symbols}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{+w}{ }\PYG{p}{:}\PYG{+w}{ }\PYG{n}{order}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{;}
+\PYG{n}{bits}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{reshape}\PYG{p}{(}\PYG{n}{de2bi}\PYG{p}{(}\PYG{n}{symbols}\PYG{p}{).}\PYG{o}{\PYGZsq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{p}{[],}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{);}
+
+\PYG{c}{\PYGZpc{}\PYGZpc{} Modulación QAM}
+\PYG{n}{qam\PYGZus{}symbols}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n}{qammod}\PYG{p}{(}\PYG{n}{bits}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{order}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{symorder}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}InputType\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}bit\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}UnitAveragePower\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nb}{true}\PYG{p}{);}
+\PYG{n}{n\PYGZus{}symbols}\PYG{+w}{ }\PYG{p}{=}\PYG{+w}{ }\PYG{n+nb}{length}\PYG{p}{(}\PYG{n}{qam\PYGZus{}symbols}\PYG{p}{);}
+
+\end{Verbatim}

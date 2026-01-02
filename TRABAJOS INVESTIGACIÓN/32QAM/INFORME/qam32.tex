@@ -1,0 +1,364 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{graphics} % for pdf, bitmapped graphics files
+\usepackage{subfig}
+\usepackage{subcaption}
+\usepackage{hyperref}
+\usepackage{academicons}
+\usepackage{xcolor}
+\usepackage{tabularx} % Asegúrate de incluir este paquete
+
+% minted for use pygmetize
+\usepackage{minted2}
+\usepackage{geometry}            % Márgenes
+\geometry{
+	top=1.3cm,
+	bottom=1.3cm,
+	left=2.5cm,
+	right=2.5cm
+}
+\setminted{
+	frame=lines,                 % Marco superior e inferior
+	framesep=2mm,                % Espaciado del marco
+	baselinestretch=1.1,         % Espaciado entre líneas
+	fontsize=\small,     		 % Tamaño de fuente
+	linenos,                     % Números de línea
+	breaklines,                  % Saltar líneas largas
+	bgcolor=gray!5,              % Fondo gris claro
+	tabsize=4,                   % Tamaño de tabulación
+	autogobble,                  % Ajusta indentación automáticamente
+	xleftmargin=1em,             % Margen izquierdo,
+	fontfamily=pcr
+}	
+
+\usepackage{courier}			 % font type
+
+% Opciones globales (opcional) minted
+
+
+% config colores to minted
+\definecolor{bg}{rgb}{0.95,0.95,0.95}
+\definecolor{keyword}{rgb}{0.13,0.13,1}
+\definecolor{comment}{rgb}{0.25,0.5,0.35}
+\definecolor{string}{rgb}{0.58,0,0.13}
+\definecolor{bgdark}{HTML}{2D2D2D}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+\usetikzlibrary{positioning}
+\usetikzlibrary{shapes.geometric, arrows}
+
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=red!30]
+\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=blue!30]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+		T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+% Color Enlace
+\definecolor{colorEnlace}{RGB}{0, 0, 0}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=colorEnlace,
+	citecolor=colorEnlace,
+	urlcolor=colorEnlace,
+	pdfauthor={Davis Bremdow Salazar Roa},
+	pdftitle={32QAM - Telecomunicaciones II}
+}
+
+% Control 
+\usepackage{amsmath}
+\begin{document}
+	
+	\title{Modulación de Amplitud de Cuadratura de 32 fases - 32QAM}
+	\author{
+		\makebox[\textwidth][c]{\large\textbf{Universidad Nacional de San Antonio Abad del Cusco}}\\
+		\makebox[\textwidth][c]{\normalsize\textit{Escuela profesional de Ingeniería Electrónica}}\\
+		\makebox[\textwidth][c]{\normalsize\textit{Telecomunicaciones II}}\\
+		\and
+		\IEEEauthorblockN{Alexander Palomino Lopez}
+		\IEEEauthorblockA{Ingeniero Electrónico \\
+			Cusco, Perú \\
+			alexander.palomino@unsaac.edu.pe}
+		\and
+		\IEEEauthorblockN{Davis Bremdow Salazar Roa - 200353}
+		\IEEEauthorblockA{Estudiante de Ingeniería Electrónica \\
+			Cusco, Perú \\
+			200353@unsaac.edu.pe}
+	}
+	
+	\maketitle
+	\begin{abstract}
+		La elevada demanda de recursos digitales por la aparición de servicios digitales cuenta con cierta repercusión en los métodos para transmitir la información es en este sentido que los métodos a emplear deben tener en cuenta en el ancho de banda para responder adecuadamente a esta evolución mediante el empleo de técnicas de modulación como la 32QAM que permite mitigar el costo ocupado en frecuencia al transmitir la información en paquetes de 5bits.
+	\end{abstract}
+	\begin{IEEEkeywords}
+		Modulación digital, 32-QAM, M-QAM, Cuadratura, Reducción del ancho de banda
+	\end{IEEEkeywords}
+	
+	\section{\textbf{Introducción}}
+	
+	La modulación en amplitud en cuadratura (QAM, Quadrature Amplitude Modulation) es una de las técnicas de modulación digital más utilizadas en los sistemas modernos de comunicaciones debido a su elevada eficiencia espectral. Al combinar variaciones simultáneas de amplitud y fase sobre dos portadoras ortogonales, QAM permite transmitir múltiples bits por símbolo, optimizando el uso del ancho de banda disponible. Esta característica la hace especialmente atractiva en aplicaciones de alta velocidad de datos, como sistemas de comunicaciones inalámbricas, enlaces de microondas, cable módem y transmisión sobre fibra óptica, donde la demanda de capacidad es cada vez mayor.
+	
+	No obstante, el incremento en la eficiencia que ofrece QAM viene acompañado de mayores complejidades a nivel de diseño y procesamiento. A medida que aumenta el orden de la modulación, la constelación se vuelve más densa, reduciendo la distancia entre símbolos y haciendo al sistema más sensible al ruido, a la distorsión del canal y a errores de sincronización. Esto exige receptores más sofisticados, con algoritmos avanzados de ecualización, sincronización y corrección de errores, así como una mayor relación señal-ruido para garantizar un desempeño confiable. Desde una perspectiva de investigación, estas limitaciones impulsan el estudio de técnicas de optimización, adaptación de modulación y codificación, y modelado preciso del canal para maximizar el rendimiento de los sistemas basados en QAM.
+	
+	\section{\textbf{Marco Teórico}}
+	
+	Para facilitar la comprensión del esquema para una modulación QAM en \cite{Tomasi2001} se emplea a modo gráfico n  diagrama de bloques para una modulación 8 QAM mostrada en la figura \ref{fig:blocks-16qam} que brinda la noción fundamental de su funcionamiento destacando el desfase de 90 grados para describir la cuadratura para la división de las señales ejecutada para su modulación.
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.5\textwidth]{media/blocks-16qam}
+		\caption{Modulación 8 - QAM}
+		\label{fig:blocks-16qam}
+	\end{figure}
+	
+	
+	En donde la señal binaria de entrada a velocidad $f_b$ se procesa para transmitir información tanto en amplitud como en fase. Los datos ingresan al divisor de bits, que agrupa los bits en símbolos de 3 bits y los distribuye en los canales I (In-phase), Q (Quadrature) y un bit de control C, reduciendo la velocidad de cada rama a $f_b/3$. Los canales I y Q alimentan convertidores de 2 a 4 niveles, que generan señales PAM multinivel, permitiendo representar múltiples estados de amplitud asociados a la constelación 8-QAM.
+	
+	Las señales PAM de los canales I y Q se aplican a moduladores de producto, donde se multiplican por portadoras ortogonales generadas por un oscilador de referencia: $\sin(\omega_c t)$ y $\cos(\omega_c t)$, esta última obtenida mediante un desfase de +90$^\circ$. Las salidas moduladas se combinan en un sumador lineal, produciendo una señal que contiene simultáneamente ambas componentes ortogonales. Finalmente, un filtro pasabanda limita el espectro y elimina componentes no deseadas, entregando a \textit{la salida la señal 8-QAM}, lista para su transmisión por el canal.
+	
+		
+	\subsection{Modelo matemático de la señal QAM}
+	
+	La señal QAM pasabanda puede expresarse como la combinación lineal de dos señales moduladas en amplitud sobre portadoras ortogonales:
+	\begin{equation}
+		s(t) = I(t)\cos(2\pi f_c t) - Q(t)\sin(2\pi f_c t)
+	\end{equation}
+	
+	donde $I(t)$ representa la componente en fase y $Q(t)$ la componente en cuadratura. Ambas señales corresponden a secuencias de símbolos discretos que toman valores de un conjunto finito de niveles de amplitud. La ortogonalidad entre las funciones seno y coseno garantiza que ambas componentes puedan ser recuperadas de manera independiente en el receptor, aun cuando se transmiten simultáneamente sobre el mismo canal.
+	
+	\subsection{Representación en banda base compleja}
+	
+	Para simplificar el análisis matemático, Tomasi introduce la representación en banda base compleja, donde la señal QAM se expresa como:
+	\begin{equation}
+		s_{bb}(t) = I(t) + jQ(t)
+	\end{equation}
+	
+	Esta representación permite modelar cada símbolo como un número complejo, facilitando el estudio del sistema en presencia de ruido y distorsiones del canal. Cada punto del plano complejo corresponde a un símbolo específico, y el conjunto de todos los símbolos posibles define la constelación QAM.
+	
+	\subsection{Constelación y número de símbolos}
+	
+	En una modulación $M$-QAM, el número total de símbolos posibles está dado por:
+	\begin{equation}
+		M = 2^k
+	\end{equation}
+	
+	donde $k$ es el número de bits por símbolo. Cada símbolo puede representarse como:
+	\begin{equation}
+		s_m = a_m + jb_m
+	\end{equation}
+	
+	siendo $a_m$ y $b_m$ los niveles de amplitud discretos en los ejes I y Q, respectivamente. Tomasi destaca que, a medida que aumenta $M$, la constelación se vuelve más densa, incrementando la eficiencia espectral pero reduciendo la distancia mínima entre símbolos.
+	
+	\subsection{Energía promedio del símbolo}
+	
+	La energía promedio por símbolo es un parámetro clave en el desempeño del sistema y se define como:
+	\begin{equation}
+		E_s = \mathbb{E}\left[|s_m|^2\right] = \mathbb{E}\left[a_m^2 + b_m^2\right]
+	\end{equation}
+	
+	La energía promedio por bit se obtiene dividiendo la energía por símbolo entre el número de bits transmitidos:
+	\begin{equation}
+		E_b = \frac{E_s}{\log_2(M)}
+	\end{equation}
+	
+	Este parámetro es fundamental para comparar el desempeño de distintas modulaciones en términos de eficiencia energética, tal como se analiza en profundidad en el texto de Tomasi.
+	
+	\subsection{Modelo de canal AWGN}
+	
+	Considerando un canal ideal con ruido blanco gaussiano aditivo (AWGN), la señal recibida puede expresarse como:
+	\begin{equation}
+		r(t) = s(t) + n(t)
+	\end{equation}
+	
+	donde $n(t)$ es un proceso gaussiano de media cero y densidad espectral de potencia $N_0/2$. Este modelo es ampliamente utilizado en investigación por su simplicidad y por permitir obtener expresiones analíticas cerradas para la probabilidad de error.
+	
+	\subsection{Distancia euclidiana mínima}
+	
+	Tomasi resalta que el desempeño de una modulación QAM está directamente relacionado con la distancia euclidiana mínima entre símbolos:
+	\begin{equation}
+		d_{\min} = \min_{i \neq j} |s_i - s_j|
+	\end{equation}
+	
+	Una mayor distancia mínima implica una mayor robustez frente al ruido, mientras que una constelación más densa reduce $d_{\min}$ y aumenta la probabilidad de error.
+	
+	\subsection{Probabilidad de error de bit}
+	
+	Para un sistema $M$-QAM sobre un canal AWGN, la probabilidad de error de bit puede aproximarse por:
+	\begin{equation}
+		P_b \approx \frac{4}{\log_2(M)}\left(1 - \frac{1}{\sqrt{M}}\right)
+		Q\left(\sqrt{\frac{3\log_2(M)}{M-1}\frac{E_b}{N_0}}\right)
+	\end{equation}
+	
+	donde la función $Q(x)$ está definida como:
+	\begin{equation}
+		Q(x) = \frac{1}{\sqrt{2\pi}}\int_x^{\infty} e^{-t^2/2}\,dt
+	\end{equation}
+	
+	Esta expresión permite evaluar el compromiso entre eficiencia espectral y robustez frente al ruido, uno de los aspectos centrales en el análisis y diseño de sistemas QAM descritos por \cite{Tomasi2001}
+	
+	\section{\textbf{Simulación}}
+	
+	Para la simulación se hizo uso del software de MATLAB que entre todos sus beneficios para el manejo de vectores y matrices, además cuenta con una toolbox para la simulación de comunicaciones (para este caso digitales) y el empleo de funciones implementadas que permiten emular de forma fácil de comprender y de rápida ejecución las diferentes modulaciones digitales como la QAM para este caso asociada a 5 bits \textbf{32 - QAM}.
+	
+	Por otro lado este software también permite agregar ruido AWGN de forma controlada (niveles configurables) para realizar un analisis más exhaustivo sobre el comportamiento de una 32 QAM frente al ruido, por tanto dentro de esta simulación se contará con las siguientes etapas.
+	
+	\begin{itemize}
+		\item Modulación 
+		\item Añadido de ruido AWGN
+		\item Transmisión
+		\item Demodulación
+		\item Gráficas y curvas relacionadas
+	\end{itemize}
+	
+	
+	\bibliographystyle{IEEEtran}
+	\bibliography{biblio}
+	
+	
+	
+	\section{Anexos}
+	
+	\begin{listing}[h]
+		\caption{Modulación 32-QAM}
+		\label{lst:mod-qam}
+		
+		\begin{minted}[bgcolor=bg,
+			linenos=false,
+			style=friendly,
+			label=Modulación 32-QAM]{matlab}
+			
+			%% Parámetros de la simulación
+			order = 32;
+			symorder = 'gray';
+			
+			symbols = 0 : order - 1;
+			bits = reshape(de2bi(symbols).', [], 1);
+			
+			%% Modulación QAM
+			qam_symbols = qammod(bits, order, symorder, "InputType", "bit", "UnitAveragePower", true);
+			n_symbols = length(qam_symbols);
+			
+		\end{minted}
+	\end{listing}
+	
+	\begin{listing}[h]
+		\caption{Añadido de ruido AWGN}
+		\label{lst:add-awgn}
+		
+		\begin{minted}[bgcolor=bg,
+			linenos=false,
+			style=friendly,
+			label=Analisis de ruido AWGN]{matlab}
+			
+			signal_power = mean(abs(tx_symbols).^2);
+			
+			SNR_linear = 10^(SNR_dB/10);
+			
+			noise_power = signal_power / SNR_linear;
+			
+			noise_symbols = sqrt(noise_power/2) * ...
+			(randn(size(tx_symbols)) + 1i*randn(size(tx_symbols)));
+			
+			rx_symbols = tx_symbols + noise_symbols;
+			
+			noise_signal = sqrt(noise_power/2) * randn(size(modulated_signal));
+			noisy_signal = modulated_signal + noise_signal;
+			
+		\end{minted}
+		
+	\end{listing}
+	
+	
+	\begin{listing}
+		\caption{Demodulación QAM}
+		\label{lst:demod-qam}
+		
+		\begin{minted}[bgcolor=bg,
+			linenos=false,
+			style=friendly,
+			label=Demodulación 32-QAM]{matlab}
+			
+			rx_bits_matrix = qamdemod(rx_symbols, M, symorder, ...
+			"OutputType","bit","UnitAveragePower",true);
+			
+			rx_bits = reshape(rx_bits_matrix.', [], 1);
+			
+			bit_errors = data_bits ~= rx_bits;
+			BER = mean(bit_errors);
+			
+			symbol_errors = any(reshape(bit_errors, k, []), 1);
+			SER = mean(symbol_errors);
+			
+			EVM_rms = sqrt(mean(abs(rx_symbols - tx_symbols).^2)) / ...
+			sqrt(mean(abs(tx_symbols).^2)) * 100;
+			
+			
+		\end{minted}
+	\end{listing}
+	
+	\begin{listing}
+		\caption{BER - SNR}
+		\label{lst:ber-sn-qam}
+		
+		\begin{minted}[bgcolor=bg,
+			linenos=false,
+			style=friendly,
+			label=BER vs SNR]{matlab}
+			
+			SNR_dB_range = 0:2:20;
+			num_snr_points = length(SNR_dB_range);
+			BER_simulated = zeros(1, num_snr_points);
+			BER_theoretical = zeros(1, num_snr_points);
+			bits_per_snr_test = 50000;
+			
+			Q = @(x) 0.5 * erfc(x/sqrt(2));
+			
+			for snr_idx = 1:num_snr_points
+			SNR_linear = 10^(SNR_dB_range(snr_idx)/10);
+			
+			test_bits = randi([0 1], bits_per_snr_test, 1);
+			test_symbols = qammod(reshape(test_bits, k, []).', M, symorder, ...
+			"InputType","bit","UnitAveragePower",true);
+			
+			noise_power = mean(abs(test_symbols).^2) / SNR_linear;
+			noise = sqrt(noise_power/2) * ...
+			(randn(size(test_symbols)) + 1i*randn(size(test_symbols)));
+			rx_symbols = test_symbols + noise;
+			
+			rx_bits = qamdemod(rx_symbols, M, symorder, ...
+			"OutputType","bit","UnitAveragePower",true);
+			rx_bits = reshape(rx_bits.', [], 1);
+			
+			BER_simulated(snr_idx) = mean(test_bits ~= rx_bits);
+			
+			EbN0_linear = SNR_linear / k;
+			BER_theoretical(snr_idx) = (4/k) * (1 - 1/sqrt(M)) * ...
+			Q(sqrt(3*k*EbN0_linear/(M-1)));
+			end
+			
+			figure;
+			semilogy(SNR_dB_range, BER_simulated, 'o-'); hold on;
+			semilogy(SNR_dB_range, BER_theoretical, '--');
+			grid on;
+			xlabel('SNR (dB)');
+			ylabel('BER');
+			legend('BER Simulado','BER Teórico','Location','southwest');
+			ylim([1e-7 1]);
+			xlim([min(SNR_dB_range) max(SNR_dB_range)]);
+			
+			
+		\end{minted}
+	\end{listing}
+	
+\end{document}
