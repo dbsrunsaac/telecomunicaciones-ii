@@ -12,3 +12,6 @@ minted*/
 *.fdb*
 *.fls
 *.dvi
+
+# media
+*.wav
