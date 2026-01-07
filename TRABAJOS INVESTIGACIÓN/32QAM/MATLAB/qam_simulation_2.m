@@ -9,7 +9,7 @@ k = log2(M); % Bits por símbolo
 % Parámetros de ruido (rango para análisis BER)
 SNR_dB_values = 0:2:20;  % Valores de SNR a evaluar
 num_SNR = length(SNR_dB_values);
-
+cl
 % Inicializar vectores para BER
 BER_simulated = zeros(1, num_SNR);
 BER_theoretical = zeros(1, num_SNR);

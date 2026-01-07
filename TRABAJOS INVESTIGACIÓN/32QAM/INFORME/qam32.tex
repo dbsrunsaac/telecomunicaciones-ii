@@ -80,7 +80,7 @@
 \usepackage{amsmath}
 \begin{document}
 	
-	\title{Modulación de Amplitud de Cuadratura de 32 fases - 32QAM}
+	\title{Modulación de Amplitud de Cuadratura - 32QAM}
 	\author{
 		\makebox[\textwidth][c]{\large\textbf{Universidad Nacional de San Antonio Abad del Cusco}}\\
 		\makebox[\textwidth][c]{\normalsize\textit{Escuela profesional de Ingeniería Electrónica}}\\
@@ -221,11 +221,72 @@
 		\item Gráficas y curvas relacionadas
 	\end{itemize}
 	
+	\subsection{\textbf{Modulación}} 
+	
+	La modulación 32QAM transforma secuencias binarias en símbolos complejos distribuidos en el plano I-Q. Cada grupo de 5 bits se asigna a una de las 32 posiciones de constelació minimizando errores al asignar bits adyacentes a símbolos vecinos y utilizando para la implementación la función qammod() de MATLAB, aplicando al mismo tiempo portadoras ortogonales en coseno (I) y seno (Q) para modular la señal en banda base a frecuencia intermedia (conocidas técnicamente como señal en banda media).
+	
+	Por otro lado el código \ref{lst:mod-qam} genera la constelación teórica como referencia y visualiza la asignación símbolo-bit, mostrando la distribución uniforme de los 32 puntos en una cuadrícula 6×6 en la cuadricula dibujada, destacando que tal representación mostradas en las figuras \ref{fig:constelacion-32qam} y \ref{fig:mod-32qam}
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.5\textwidth]{media/constelacion-32qam}
+		\caption{Diagrama de constelación modulación 32QAM}
+		\label{fig:constelacion-32qam}
+	\end{figure}
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.5\textwidth]{media/mod-32qam}
+		\caption{Modulación 32QAM}
+		\label{fig:mod-32qam}
+	\end{figure}
+	
+	Permiten constatar los conceptos vistos frente al esquema en el cual la amplitud y fase de cada punto codifican la información digital.
+	
+	
+	\subsection{\textbf{Añadido de ruido AWGN}}
+	
+	El ruido AWGN (Additive White Gaussian Noise) se añade modelando condiciones reales de canal mediante muestras gaussianas complejas independientes. La potencia de ruido se calcula a partir de la SNR especificada en dB, convirtiéndola a escala lineal mediante la relación $A = 10^{SNR_dB/10}$ para determinar la varianza y nivel de ruido definida en el bloque de código \ref{lst:add-awgn} implementado, permite analizar el degradamiento respecto al SNR.
+	
+	Por otro lado es importante destacar que el ruido afecta tanto a los símbolos en banda base como a la señal modulada, pudiendo analizar este comportamiento mediante la relación entre el BER respecto al SNR como se muestra en la figura \ref{fig:ber-32qam}.
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.5\textwidth]{media/ber-32qam}
+		\caption{Probabilidad de Error de bit vs SNR - Modulación 32QAM}
+		\label{fig:ber-32qam}
+	\end{figure}
+	
+	\subsection{\textbf{Transmisión}}
+	
+	La transmisión simula el paso de la señal por el canal mediante la combinación de la señal modulada con el ruido generado, equivaliendo esto en simulación al uso de variables empleadas para almacenar las señales moduladas en las etapas posteriores, sin embargo también es posible modelar un canal para emular las perdidas o interferencia sujetas a la experimentación física real.
+	
+	\subsection{\textbf{Demodulación}}
+	
+	Finalmente en el proceso inverso o demodulación se emplea la función qamdemod() de MATLAB para decidir, a partir de los símbolos ruidosos recibidos, qué símbolo de constelación fue transmitido utilizando para este proceso la detección por mínima distancia euclidiana a los puntos de constelación ideales, seguido de la conversión de símbolos a bits.
+	
+	Por ello dado el proceso inverso es que también en este bloque es que se puede realizar un análisis preciso entre los bits modulados y los demodulados verificando el error y cual es su relación con el SNR de la señal, la implementación muestra el diagrama de constelación para diferenciar gráficamente como afecta el ruido a las figuras \ref{fig:demod-snr-0db} y \ref{fig:demod-snr-20db}
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.5\linewidth]{media/demod-SNR-0db}
+		\caption{Señal 32QAM demodulada - SNR 0 dB}
+		\label{fig:demod-snr-0db}
+	\end{figure}
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.5\linewidth]{media/demod-SNR-20db}
+		\caption{Señal 32QAM demodulada - SNR 20 dB}
+		\label{fig:demod-snr-20db}
+	\end{figure}
+	
+	
+	
+	El sistema demuestra cómo, incluso con ruido significativo, la mayoría de decisiones son correctas cuando los símbolos recibidos caen dentro de las regiones de decisión apropiadas. Se incluye análisis de errores por posición de bit dentro del símbolo, mostrando que los bits mapeados a decisiones de signo (MSBs) son más robustos que aquellos mapeados a decisiones de magnitud (LSBs) en QAM.
 	
 	\bibliographystyle{IEEEtran}
 	\bibliography{biblio}
-	
-	
 	
 	\section{Anexos}
 	
