@@ -125,7 +125,7 @@
 	
 	En donde la señal binaria de entrada a velocidad $f_b$ se procesa para transmitir información tanto en amplitud como en fase. Los datos ingresan al divisor de bits, que agrupa los bits en símbolos de 3 bits y los distribuye en los canales I (In-phase), Q (Quadrature) y un bit de control C, reduciendo la velocidad de cada rama a $f_b/3$. Los canales I y Q alimentan convertidores de 2 a 4 niveles, que generan señales PAM multinivel, permitiendo representar múltiples estados de amplitud asociados a la constelación 8-QAM.
 	
-	Las señales PAM de los canales I y Q se aplican a moduladores de producto, donde se multiplican por portadoras ortogonales generadas por un oscilador de referencia: $\sin(\omega_c t)$ y $\cos(\omega_c t)$, esta última obtenida mediante un desfase de +90$^\circ$. Las salidas moduladas se combinan en un sumador lineal, produciendo una señal que contiene simultáneamente ambas componentes ortogonales. Finalmente, un filtro pasabanda limita el espectro y elimina componentes no deseadas, entregando a \textit{la salida la señal 8-QAM}, lista para su transmisión por el canal.
+	Las señales PAM \cite{couch2012sistemas} de los canales I y Q se aplican a moduladores de producto, donde se multiplican por portadoras ortogonales generadas por un oscilador de referencia: $\sin(\omega_c t)$ y $\cos(\omega_c t)$, esta última obtenida mediante un desfase de +90$^\circ$. Las salidas moduladas se combinan en un sumador lineal, produciendo una señal que contiene simultáneamente ambas componentes ortogonales. Finalmente, un filtro pasabanda limita el espectro y elimina componentes no deseadas, entregando a \textit{la salida la señal 8-QAM}, lista para su transmisión por el canal.
 	
 		
 	\subsection{Modelo matemático de la señal QAM}
@@ -223,7 +223,7 @@
 	
 	\subsection{\textbf{Modulación}} 
 	
-	La modulación 32QAM transforma secuencias binarias en símbolos complejos distribuidos en el plano I-Q. Cada grupo de 5 bits se asigna a una de las 32 posiciones de constelació minimizando errores al asignar bits adyacentes a símbolos vecinos y utilizando para la implementación la función qammod() de MATLAB, aplicando al mismo tiempo portadoras ortogonales en coseno (I) y seno (Q) para modular la señal en banda base a frecuencia intermedia (conocidas técnicamente como señal en banda media).
+	La modulación 32QAM transforma secuencias binarias en símbolos complejos distribuidos en el plano I-Q como se describe en \cite{stallings2004comunicaciones} asignando para esto grupos de 5 bits se asigna a una de las 32 posiciones de constelació minimizando errores al asignar bits adyacentes a símbolos vecinos y utilizando para la implementación la función qammod() de MATLAB, aplicando al mismo tiempo portadoras ortogonales en coseno (I) y seno (Q) para modular la señal en banda base a frecuencia intermedia (conocidas técnicamente como señal en banda media).
 	
 	Por otro lado el código \ref{lst:mod-qam} genera la constelación teórica como referencia y visualiza la asignación símbolo-bit, mostrando la distribución uniforme de los 32 puntos en una cuadrícula 6×6 en la cuadricula dibujada, destacando que tal representación mostradas en las figuras \ref{fig:constelacion-32qam} y \ref{fig:mod-32qam}
 	
@@ -269,25 +269,32 @@
 	
 	\begin{figure}[h]
 		\centering
-		\includegraphics[width=0.5\linewidth]{media/demod-SNR-0db}
+		\includegraphics[width=0.5\textwidth]{media/demod-SNR-0db}
 		\caption{Señal 32QAM demodulada - SNR 0 dB}
 		\label{fig:demod-snr-0db}
 	\end{figure}
 	
 	\begin{figure}[h]
 		\centering
-		\includegraphics[width=0.5\linewidth]{media/demod-SNR-20db}
+		\includegraphics[width=0.5\textwidth]{media/demod-SNR-20db}
 		\caption{Señal 32QAM demodulada - SNR 20 dB}
 		\label{fig:demod-snr-20db}
 	\end{figure}
 	
-	
-	
 	El sistema demuestra cómo, incluso con ruido significativo, la mayoría de decisiones son correctas cuando los símbolos recibidos caen dentro de las regiones de decisión apropiadas. Se incluye análisis de errores por posición de bit dentro del símbolo, mostrando que los bits mapeados a decisiones de signo (MSBs) son más robustos que aquellos mapeados a decisiones de magnitud (LSBs) en QAM.
+	
+	\section{\textbf{Conclusión}}
+	
+	El método de simulación implementado en MATLAB, basado en la modulación y demodulación mediante funciones estándar como qammod() y qamdemod(), permitió modelar de manera precisa el comportamiento de un sistema 32-QAM sobre un canal AWGN con una correcta parametrización de la potencia unitaria del símbolo y la inclusión de mapeo Gray garantizaron que el análisis del BER reflejara fielmente las condiciones teóricas, validando el uso de este enfoque como una herramienta confiable para el estudio del desempeño de modulaciones digitales de alto orden.
+	
+	El análisis del BER en función del SNR evidenció claramente la relación inversa entre la probabilidad de error y la relación señal-ruido en sistemas 32-QAM. A bajos valores de SNR, la elevada densidad de la constelación incrementa significativamente la probabilidad de error debido a la reducción de la distancia euclidiana mínima entre símbolos. Sin embargo, a medida que el SNR aumenta, el BER disminuye de forma exponencial, mostrando una fuerte concordancia entre los resultados simulados y la expresión teórica, lo que confirma la validez del modelo AWGN utilizado.
+	
+	Los resultados obtenidos demuestran que, si bien la modulación 32-QAM ofrece una alta eficiencia espectral al transmitir 5 bits por símbolo, esta ventaja se logra a costa de una mayor sensibilidad al ruido, reflejada directamente en el comportamiento del BER. El método de análisis empleado permite cuantificar este compromiso entre eficiencia espectral y robustez, proporcionando criterios claros para la selección de esquemas de modulación en función de los requerimientos de calidad de servicio y las condiciones del canal.
 	
 	\bibliographystyle{IEEEtran}
 	\bibliography{biblio}
 	
+	\newpage
 	\section{Anexos}
 	
 	\begin{listing}[h]
@@ -340,8 +347,9 @@
 		
 	\end{listing}
 	
+	\newpage
 	
-	\begin{listing}
+	\begin{listing}[h]
 		\caption{Demodulación QAM}
 		\label{lst:demod-qam}
 		
@@ -368,7 +376,7 @@
 		\end{minted}
 	\end{listing}
 	
-	\begin{listing}
+	\begin{listing}[h]
 		\caption{BER - SNR}
 		\label{lst:ber-sn-qam}
 		
